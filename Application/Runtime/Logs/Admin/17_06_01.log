@@ -1,0 +1,63 @@
+[ 2017-06-01T09:56:17+08:00 ] 127.0.0.1 /index.php/admin/login
+ERR: 非法操作:index
+
+[ 2017-06-01T13:39:44+08:00 ] 127.0.0.1 /index.php/Admin/User/user.html
+ERR: Think\Controller:assing方法不存在！
+
+[ 2017-06-01T13:40:10+08:00 ] 127.0.0.1 /index.php/Admin/User/user.html
+ERR: Think\Controller:assingn方法不存在！
+
+[ 2017-06-01T14:04:29+08:00 ] 127.0.0.1 /index.php/Admin/User/user.html
+ERR: 1054:Unknown column 'status' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( status=1 ) LIMIT 1  
+
+[ 2017-06-01T16:18:15+08:00 ] 127.0.0.1 /Index.php/Admin/User/deleteUser/uid/1.html
+ERR: 非法操作:deleteUser
+
+[ 2017-06-01T16:31:44+08:00 ] 127.0.0.1 /Index.php/Admin/User/deleteUser/uid/1
+ERR: 非法操作:deleteUser
+
+[ 2017-06-01T16:58:11+08:00 ] 127.0.0.1 /Index.php/Admin/User/change/uid/30
+ERR: 模板不存在:./Application/Admin/View/User/change.html
+
+[ 2017-06-01T21:02:25+08:00 ] 127.0.0.1 /Index.php/Admin/User/user.html
+ERR: 1054:Unknown column 'usernaem' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( usernaem like $username ) LIMIT 1  
+
+[ 2017-06-01T21:33:00+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: Think\Controller:__contruct方法不存在！
+
+[ 2017-06-01T22:14:09+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496326449' WHERE ( uid= )
+
+[ 2017-06-01T22:15:25+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496326525' WHERE ( uid= )
+
+[ 2017-06-01T22:15:54+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496326554' WHERE ( uid= )
+
+[ 2017-06-01T22:16:09+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496326569' WHERE ( uid= )
+
+[ 2017-06-01T22:21:03+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/common.css
+ERR: 非法操作:css
+
+[ 2017-06-01T22:21:03+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-01T22:21:03+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2017-06-01T22:21:03+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-01T22:21:03+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-01T22:21:03+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+

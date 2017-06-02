@@ -1,0 +1,6 @@
+[ 2017-05-28T13:43:25+08:00 ] 127.0.0.1 /index.php/Home/Index/login.html
+ERR: 非法操作:login
+
+[ 2017-05-28T15:28:49+08:00 ] 127.0.0.1 /index.php/Home/User/login.html
+ERR: XML标签语法错误 : name="status" value="1 
+

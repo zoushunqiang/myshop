@@ -1,0 +1,24 @@
+[ 2017-05-27T16:45:31+08:00 ] 127.0.0.1 /index.php/Home/User/regsave.html
+ERR: Think\Model:getName方法不存在！
+
+[ 2017-05-27T16:46:47+08:00 ] 127.0.0.1 /index.php/Home/User/regsave.html
+ERR: Think\Model:getName方法不存在！
+
+[ 2017-05-27T16:46:55+08:00 ] 127.0.0.1 /index.php/Home/User/regsave.html
+ERR: Think\Model:getName方法不存在！
+
+[ 2017-05-27T20:55:40+08:00 ] 127.0.0.1 /index.php/Home/reg
+ERR: 无法加载控制器:Reg
+
+[ 2017-05-27T21:04:52+08:00 ] 127.0.0.1 /index.php/Home/Index/login.html
+ERR: 非法操作:login
+
+[ 2017-05-27T23:00:13+08:00 ] 127.0.0.1 /index.php/Home/User/logout.html
+ERR: 非法操作:logout
+
+[ 2017-05-27T23:01:03+08:00 ] 127.0.0.1 /index.php/Home/User/logout.html
+ERR: 非法操作:logout
+
+[ 2017-05-27T23:01:09+08:00 ] 127.0.0.1 /index.php/Home/User/logout.html
+ERR: 非法操作:logout
+

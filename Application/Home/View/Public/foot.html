@@ -1,0 +1,16 @@
+<!--底部开始-->
+<div clas="clear"></div>
+<div class="footer clear wrap1000">
+  <div class="shop_footer_link">
+    <p>
+      <a href="{:U('Index/index')}">首页</a>|
+      <volist name="contents" id="vo">
+        <a href="{:U('Index/content',array('cat_id'=>$vo['cat_id']),'')}">{$vo.cat_name}</a>
+      </volist>
+    </p>
+  </div>
+  <div class="shop_footer_copy">
+    <p>©2016 百货商城 版权所有</p>
+  </div>
+</div>
+<!-- 底部 End -->

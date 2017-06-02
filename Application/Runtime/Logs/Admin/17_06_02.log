@@ -1,0 +1,292 @@
+[ 2017-06-02T08:34:40+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496363680' WHERE ( uid= )
+
+[ 2017-06-02T08:42:12+08:00 ] 127.0.0.1 /Index.php/Admin/Index/content.html
+ERR: 非法操作:content
+
+[ 2017-06-02T08:45:30+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/common.css
+ERR: 非法操作:css
+
+[ 2017-06-02T08:45:30+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:45:30+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:45:30+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:45:30+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-02T08:45:30+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:45:30+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:58:49+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/common.css
+ERR: 非法操作:css
+
+[ 2017-06-02T08:58:49+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:58:49+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:58:49+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-02T08:58:49+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:58:49+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:59:16+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/common.css
+ERR: 非法操作:css
+
+[ 2017-06-02T08:59:16+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:59:16+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-02T08:59:16+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:59:16+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:59:16+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:59:16+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-02T08:59:16+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T08:59:17+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:00:13+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496365213' WHERE ( uid= )
+
+[ 2017-06-02T09:00:17+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:00:17+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:00:17+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:00:17+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:00:17+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/common.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:00:17+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:00:17+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:00:17+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:00:17+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:02:34+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:02:34+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/common.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:02:34+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:02:34+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:02:34+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:02:34+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:02:34+08:00 ] 127.0.0.1 /Index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:02:41+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:02:41+08:00 ] 127.0.0.1 /Index.php/Admin/Index/css/common.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:03:45+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/css/common.css
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:45+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/css/main.css
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:45+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/jquery.min.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:45+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/colResizable-1.3.min.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:45+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/common.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:48+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/css/common.css
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:48+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/common.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:48+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/colResizable-1.3.min.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:48+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/css/main.css
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:48+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/jquery.min.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:48+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/colResizable-1.3.min.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:03:48+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/common.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:04:00+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/colResizable-1.3.min.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:04:00+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/css/main.css
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:04:00+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/jquery.min.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:04:00+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/common.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:04:00+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/css/common.css
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:04:01+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/colResizable-1.3.min.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:04:01+08:00 ] 127.0.0.1 /Index.php/Admin/Index/__PUBLIC/Admin/js/common.js
+ERR: 非法操作:__PUBLIC
+
+[ 2017-06-02T09:07:53+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496365673' WHERE ( uid= )
+
+[ 2017-06-02T09:08:13+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496365693' WHERE ( uid= )
+
+[ 2017-06-02T09:08:17+08:00 ] 127.0.0.1 /Index.php/Admin/Content/css/common.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:08:17+08:00 ] 127.0.0.1 /Index.php/Admin/Content/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:08:17+08:00 ] 127.0.0.1 /Index.php/Admin/Content/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:08:17+08:00 ] 127.0.0.1 /Index.php/Admin/Content/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:08:17+08:00 ] 127.0.0.1 /Index.php/Admin/Content/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:08:22+08:00 ] 127.0.0.1 /Index.php/Admin/Content/css/main.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:08:22+08:00 ] 127.0.0.1 /Index.php/Admin/Content/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:08:22+08:00 ] 127.0.0.1 /Index.php/Admin/Content/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:08:22+08:00 ] 127.0.0.1 /Index.php/Admin/Content/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:08:22+08:00 ] 127.0.0.1 /Index.php/Admin/Content/css/common.css
+ERR: 非法操作:css
+
+[ 2017-06-02T09:08:22+08:00 ] 127.0.0.1 /Index.php/Admin/Content/js/colResizable-1.3.min.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:08:22+08:00 ] 127.0.0.1 /Index.php/Admin/Content/js/common.js
+ERR: 非法操作:js
+
+[ 2017-06-02T09:27:42+08:00 ] 127.0.0.1 /Index.php/Admin/Content/change.html/cat_id/1
+ERR: 非法操作:change.html
+
+[ 2017-06-02T09:28:14+08:00 ] 127.0.0.1 /Index.php/Admin/Content/change.html/cat_id/1
+ERR: 非法操作:change.html
+
+[ 2017-06-02T09:29:28+08:00 ] 127.0.0.1 /Index.php/Admin/Content/change.html/cat_id/1
+ERR: 非法操作:change.html
+
+[ 2017-06-02T09:36:50+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496367410' WHERE ( uid= )
+
+[ 2017-06-02T10:05:04+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496369104' WHERE ( uid= )
+
+[ 2017-06-02T13:49:09+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496382549' WHERE ( uid= )
+
+[ 2017-06-02T15:19:24+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496387964' WHERE ( uid= )
+
+[ 2017-06-02T15:20:39+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496388039' WHERE ( uid= )
+
+[ 2017-06-02T15:20:44+08:00 ] 127.0.0.1 /Index.php/Admin/System/adminUser.html
+ERR: 模板不存在:./Application/Admin/View/System/adminUser.html
+
+[ 2017-06-02T15:29:25+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496388565' WHERE ( uid= )
+
+[ 2017-06-02T15:46:20+08:00 ] 127.0.0.1 /Index.php/Admin/System/2
+ERR: 非法操作:2
+
+[ 2017-06-02T15:46:56+08:00 ] 127.0.0.1 /Index.php/Admin/System/2
+ERR: 非法操作:2
+
+[ 2017-06-02T15:47:02+08:00 ] 127.0.0.1 /Index.php/Admin/System/2
+ERR: 非法操作:2
+
+[ 2017-06-02T15:47:59+08:00 ] 127.0.0.1 /Index.php/Admin/System/doChange.html
+ERR: 1062:Duplicate entry 'admin2' for key 'username'
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `username`='admin2' WHERE `uid` = 1
+
+[ 2017-06-02T15:53:24+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496390004' WHERE ( uid= )
+
+[ 2017-06-02T15:54:49+08:00 ] 127.0.0.1 /Index.php/Admin/System/change/uid/1
+ERR: 非法操作:change
+
+[ 2017-06-02T16:36:55+08:00 ] 127.0.0.1 /Index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496392615' WHERE ( uid= )
+

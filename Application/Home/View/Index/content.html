@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>百货商城-关于我们</title>
+  <link rel="stylesheet" href="__PUBLIC__/Home/css/base.css" type="text/css" />
+  <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_common.css" type="text/css" />
+  <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_header.css" type="text/css" />
+     <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_home.css" type="text/css" />
+     <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.js" ></script>
+     <script type="text/javascript" src="__PUBLIC__/Home/js/focus.js" ></script>
+</head>
+<body>
+  <include file="Public/head" />
+	<!-- Body -->
+	<style type="text/css">
+		.news{width:1000px; margin:10px auto 0; border:1px solid #EBEBEB;color: #666666;}
+		.news .title{width: 100%;height: 80px;}
+		.news .title h1{width: 95%;margin: 20px auto 0px;height: 50px;line-height: 50px;text-align: center;font-size: 22px;border-bottom: 1px solid #dfdfdf;}
+		.news .title h2{text-align: center;margin-top: 10px;color: #999999;}
+		.news .content{padding: 30px 20px;font-size: 14px;line-height: 2em;}
+  </style>
+  <!-- 面包屑 注意首页没有 -->
+
+  <div class="shop_hd_breadcrumb">
+    <strong>当前位置：</strong>
+    <span>
+      <a href="{:U('Index/index')}">首页</a>&nbsp;›&nbsp;
+      <a href="{:U('Index/content',array('cat_id'=>$content[cat_name]))}">{$content.cat_name}</a>
+    </span>
+  </div>
+  <div class="clear"></div>
+  <!-- 面包屑 End -->
+	<div class="news">
+		<div class="title">
+			<h1>{$content.title}</h1>
+			<h2>时间：{$content.add_time|date='Y-m-d H:i:s',###}</h2>
+		</div>
+		<div class="content">
+			{$content.content|html_entity_decode} 
+		</div>
+	</div>
+	<!-- Body End -->
+  <include file="Public/foot" />
+</body>
+</html> 
