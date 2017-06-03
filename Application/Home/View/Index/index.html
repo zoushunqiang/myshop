@@ -21,12 +21,14 @@
         <div>
           <dl class=""></dl>
           <!--轮播广告-->
-          <dl class="">
-            <dt><a href="" title="" target="_blank"><img src="__PUBLIC__/Home/images/e2dfe57add8fff66ed0964b1effd39b9.jpg" alt="2011城市主题公园亲子游" ></a></dt>
-          </dl>
-          <dl class="">
+          <volist name="ban_list" id="vo">
+            <dl class="">
+              <dt><a href="" title="" target="_blank"><img src="{$vo.water_img}" alt="{$vo.title}" ></a></dt>
+            </dl>
+          </volist>
+          <!-- <dl class="">
             <dt><a href="" title="" target="_blank"><img src="__PUBLIC__/Home/images/e50b5d398e3b890f08e14defbc71a94d.jpg" alt="潜入城市周边清幽之地"></a></dt>
-          </dl>
+          </dl> -->
           <!--轮播广告 END-->
         </div>
       </div>

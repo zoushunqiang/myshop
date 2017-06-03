@@ -38,7 +38,7 @@
         <div class="box span10 oh">
           <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list_table">
             <tr>
-             <th width="150" >ID</th>
+             <th width="50" >ID</th>
              <th width="250">标题</th>
              <th width="250">图片</th>
              <th width="280">添加时间</th>
@@ -48,11 +48,11 @@
             <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                 <td><?php echo ($vo["banner_id"]); ?></td>
                 <td><?php echo ($vo["title"]); ?></td>
-                <td><?php echo ($vo["banner"]); ?></td>
+                <td><img src="<?php echo ($vo["water_img"]); ?>" alt="" height='50'></td>
                 <td><?php echo (date('Y-m-d',$vo["add_time"])); ?></td>
                 <td>
-                  <a href="<?php echo U('Content/bannerInfo',array('cat_id'=>$vo[cat_id]),'');?>">修改</a>
-                  <a href="<?php echo U('Content/delete');?>">删除</a>
+                  <a href="<?php echo U('Content/bannerInfo');?>?banner_id=<?php echo ($vo["banner_id"]); ?>">修改</a>
+                  <a href="<?php echo U('Content/delBanner',array('banner_id'=>$vo['banner_id']),'');?>">删除</a>
                 </td>
               </tr><?php endforeach; endif; else: echo "" ;endif; ?>
           </tbody>

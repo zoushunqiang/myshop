@@ -81,9 +81,9 @@
               <tr>
                <th width="40"></th>
                <th width="150" >订单号</th>
-               <th width="280">下单人</th>
+               <th width="100">下单人</th>
                <th width="100">总金额</th>
-               <th width="200">下单时间</th>
+               <th width="100">下单时间</th>
                <th width="180">状态</th>
                <th>操作</th>
              </tr>

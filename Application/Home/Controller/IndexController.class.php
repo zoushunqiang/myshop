@@ -11,6 +11,9 @@ class IndexController extends Controller {
     $this->assign('contents',$content_list);
   }
   public function index(){
+    $Banner = M('Banner');
+    $ban_list = $Banner->select();
+    $this->assign('ban_list',$ban_list);
     $this->display();
   }
   public function content(){

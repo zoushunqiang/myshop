@@ -84,16 +84,18 @@
   <div class="shop_bd_2 clearfix">
     <div class="xifan_sub_box">
       <div id="p-select" class="sub_nav">
-        <div class="sub_no" id="xifan_bd1lfsj"> <ul></ul></div>
+        <div class="sub_no" id="xifan_bd1lfsj"><ul></ul></div>
       </div>
       <div id="xifan_bd1lfimg">
         <div>
           <dl class=""></dl>
           <!--轮播广告-->
-          <dl class="">
-            <dt><a href="" title="" target="_blank"><img src="/Public/Home/images/e2dfe57add8fff66ed0964b1effd39b9.jpg" alt="2011城市主题公园亲子游" ></a></dt></dl>
-            <dl class="">
-            <dt><a href="" title="" target="_blank"><img src="/Public/Home/images/e50b5d398e3b890f08e14defbc71a94d.jpg" alt="潜入城市周边清幽之地"></a></dt>                  </dl>
+          <?php if(is_array($ban_list)): $i = 0; $__LIST__ = $ban_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><dl class="">
+              <dt><a href="" title="" target="_blank"><img src="<?php echo ($vo["water_img"]); ?>" alt="<?php echo ($vo["title"]); ?>" ></a></dt>
+            </dl><?php endforeach; endif; else: echo "" ;endif; ?>
+          <!-- <dl class="">
+            <dt><a href="" title="" target="_blank"><img src="/Public/Home/images/e50b5d398e3b890f08e14defbc71a94d.jpg" alt="潜入城市周边清幽之地"></a></dt>
+          </dl> -->
           <!--轮播广告 END-->
         </div>
       </div>
