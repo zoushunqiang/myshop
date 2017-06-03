@@ -52,8 +52,8 @@ class ContentController extends Controller
   }
   public function bannerinfo(){
     $Banner = M('Banner');
-    $banner_id = I('banner_id');
-    $banInfo = $Banner->where(array('banner_id'=>$banner_id))->find();
+    $b_id = I('b_id');
+    $banInfo = $Banner->where(array('b_id'=>$b_id))->find();
     $this->assign('banInfo',$banInfo);
     $this->display();
   }
@@ -61,16 +61,16 @@ class ContentController extends Controller
   public function doBanner(){
     $Banner = M('Banner');
     $title = I('title');
-    $banner_id = I('banner_id');
-    // echo $banner_id;exit;
+    $b_id = I('b_id');
+    // echo $b_id;exit;
     $img = $_FILES['img'];
     // 若为修改 同时未上传图片则不做处理图片
-    if(($img['error']==4) && (!empty($banner_id))){
+    if(($img['error']==4) && (!empty($b_id))){
       $data = array(
       'title'=>$title,
       'add_time'=>time(),
       );
-      $re = $Banner->where(array('banner_id'=>$banner_id))->save($data);
+      $re = $Banner->where(array('b_id'=>$b_id))->save($data);
     }else{
       // 上传图片
       $upload = new \THink\Upload();
@@ -96,15 +96,15 @@ class ContentController extends Controller
         'add_time'=>time(),
         );
       // 判定是修改，还是新增
-      if(!empty($banner_id)){
+      if(!empty($b_id)){
         // 删除旧图片
-        $Info = $Banner->where(array('banner_id'=>$banner_id))->find();
+        $Info = $Banner->where(array('b_id'=>$b_id))->find();
         $root = dirname(dirname(dirname(dirname(__FILE__))));
         unlink($root.$Info['org_img']);
         unlink($root.$Info['thumb_img']);
         unlink($root.$Info['water_img']);
         // 修改数据
-        $re = $Banner->where(array('banner_id'=>$banner_id))->data($data)->save();
+        $re = $Banner->where(array('b_id'=>$b_id))->data($data)->save();
       }else{
         $re = $Banner->data($data)->add();
       }
@@ -117,15 +117,15 @@ class ContentController extends Controller
   }
   public function delBanner(){
     $Banner = M('Banner');
-    $banner_id = I('banner_id');
+    $b_id = I('b_id');
     // 删除图片
-    $Info = $Banner->where(array('banner_id'=>$banner_id))->find();
+    $Info = $Banner->where(array('b_id'=>$b_id))->find();
     $root = dirname(dirname(dirname(dirname(__FILE__))));
     unlink($root.$Info['org_img']);
     unlink($root.$Info['thumb_img']);
     unlink($root.$Info['water_img']);
     // 输出数据库数据
-    $re = $Banner->where(array('banner_id'=>$banner_id))->delete();
+    $re = $Banner->where(array('b_id'=>$b_id))->delete();
     if($re>0){
       $this->success('操作成功');
     }else{

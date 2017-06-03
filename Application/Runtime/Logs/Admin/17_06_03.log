@@ -64,3 +64,11 @@ ERR: 1064:You have an error in your SQL syntax; check the manual that correspond
 ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
  [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496484583' WHERE ( uid= )
 
+[ 2017-06-03T21:20:18+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496496018' WHERE ( uid= )
+
+[ 2017-06-03T21:25:55+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496496355' WHERE ( uid= )
+

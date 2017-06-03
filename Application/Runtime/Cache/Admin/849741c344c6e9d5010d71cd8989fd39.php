@@ -33,7 +33,7 @@
                 <td class="td_right">标题：</td>
                 <td class=""> 
                   <input type="text" name="title" class="input-text lh30" size="40" value="<?php echo ($banInfo["title"]); ?>">
-                  <input type="hidden" name="banner_id" value="<?php echo ($banInfo["banner_id"]); ?>">
+                  <input type="hidden" name="b_id" value="<?php echo ($banInfo["b_id"]); ?>">
                 </td>
               </tr>
               <tr>
