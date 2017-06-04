@@ -12,8 +12,11 @@ class IndexController extends Controller {
   }
   public function index(){
     $Banner = M('Banner');
+    $WebConfig = M('WebConfig');
     $ban_list = $Banner->select();
+    $web_config = $WebConfig->find();
     $this->assign('ban_list',$ban_list);
+    $this->assign('web_config',$web_config);
     $this->display();
   }
   public function content(){

@@ -1,0 +1,26 @@
+[ 2017-06-04T08:31:17+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496536277' WHERE ( uid= )
+
+[ 2017-06-04T08:33:41+08:00 ] 127.0.0.1 /index.php/Admin/System/delete/uid/5
+ERR: 非法操作:delete
+
+[ 2017-06-04T09:04:21+08:00 ] 127.0.0.1 /index.php/Admin/System/config.html
+ERR: 1146:Table 'myshop.tp_web_config' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_web_config`
+
+[ 2017-06-04T09:06:45+08:00 ] 127.0.0.1 /index.php/Admin/System/config.html
+ERR: 1146:Table 'myshop.tp_web_config' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_web_config`
+
+[ 2017-06-04T09:06:50+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496538410' WHERE ( uid= )
+
+[ 2017-06-04T09:06:55+08:00 ] 127.0.0.1 /index.php/Admin/System/config.html
+ERR: 1146:Table 'myshop.tp_web_config' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_web_config`
+
+[ 2017-06-04T09:24:07+08:00 ] 127.0.0.1 /index.php/Admin/User/doConfig.html
+ERR: 非法操作:doConfig
+

@@ -1,7 +1,9 @@
 <?php if (!defined('THINK_PATH')) exit();?><!doctype html>
 <head>
   <meta charset="utf-8">
-  <title>百货商城-首页</title>
+  <meta name="keyword" content="<?php echo ($web_config["keyword"]); ?>" >
+  <meta name="description" content="<?php echo ($web_config["description"]); ?>" >
+  <title><?php echo ($web_config["title"]); ?>-首页</title>
   <link rel="stylesheet" href="/Public/Home/css/base.css" type="text/css" />
   <link rel="stylesheet" href="/Public/Home/css/shop_common.css" type="text/css" />
   <link rel="stylesheet" href="/Public/Home/css/shop_header.css" type="text/css" />
@@ -93,9 +95,6 @@
           <?php if(is_array($ban_list)): $i = 0; $__LIST__ = $ban_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><dl class="">
               <dt><a href="" title="" target="_blank"><img src="<?php echo ($vo["water_img"]); ?>" alt="<?php echo ($vo["title"]); ?>" ></a></dt>
             </dl><?php endforeach; endif; else: echo "" ;endif; ?>
-          <!-- <dl class="">
-            <dt><a href="" title="" target="_blank"><img src="/Public/Home/images/e50b5d398e3b890f08e14defbc71a94d.jpg" alt="潜入城市周边清幽之地"></a></dt>
-          </dl> -->
           <!--轮播广告 END-->
         </div>
       </div>

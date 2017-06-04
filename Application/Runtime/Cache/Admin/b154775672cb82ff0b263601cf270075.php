@@ -54,7 +54,7 @@
                 <td><?php echo (date("Y-m-d H:i:s",$vo["reg_time"])); ?></td>
                 <td>
                 <a href="<?php echo U('System/info',array('uid'=>$vo[uid]),'');?>">修改</a>
-                <a href="<?php echo U('System/delete',array('uid'=>$vo[uid]),'');?>">删除</a>
+                <a href="<?php echo U('System/delUser',array('uid'=>$vo[uid]),'');?>">删除</a>
                 </td>
               </tr><?php endforeach; endif; else: echo "" ;endif; ?>
          </tbody>
