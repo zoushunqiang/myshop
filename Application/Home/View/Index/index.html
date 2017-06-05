@@ -45,44 +45,15 @@
       <div class="tuijian_content">
         <div id="tuijian_content_1" class="tuijian_shangpin" style="display: block;">
           <ul>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">11111111棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
+            <volist name="new_list" id="vo">
+              <li>
+                <dl>
+                  <dt><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}"><img src="{$vo.water_img}" width=160 height=160 /></a></dt>
+                  <dd><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}">{$vo.title|Mystrsub}</a></dd>
+                  <dd> 商城价：<em>{$vo.price}</em>元</dd>
+                </dl>
+              </li>
+            </volist>
           </ul>
         </div>
       </div>
@@ -99,44 +70,15 @@
       <div class="tuijian_content">
         <div id="tuijian_content_1" class="tuijian_shangpin" style="display: block;">
           <ul>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">11111111棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
+            <volist name="best_list" id="vo">
+              <li>
+                <dl>
+                  <dt><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}"><img src="{$vo.water_img}" width=160 height=160 /></a></dt>
+                  <dd><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}">{$vo.title|Mystrsub}</a></dd>
+                  <dd> 商城价：<em>{$vo.price}</em>元</dd>
+                </dl>
+              </li>
+            </volist>
           </ul>
         </div>
         </div>

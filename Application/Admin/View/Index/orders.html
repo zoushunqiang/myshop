@@ -16,47 +16,47 @@
         minWidth:30
       }); 
       $('#selectAll').click(function () {
-                    //全选
-                    var ss=$("#selectAll").prop('class');
-                    if(ss=='btn btn82 btn_nochecked'){
-                      $('#list :checkbox').prop('checked',true); 
-                      $("#selectAll").prop('class','btn btn82 btn_checked');
-                    }else{
-                      $('#list :checkbox').prop('checked',false); 
-                      $("#selectAll").prop('class','btn btn82 btn_nochecked');
-                    }                 
-                  });
+        //全选
+        var ss=$("#selectAll").prop('class');
+        if(ss=='btn btn82 btn_nochecked'){
+          $('#list :checkbox').prop('checked',true); 
+          $("#selectAll").prop('class','btn btn82 btn_checked');
+        }else{
+          $('#list :checkbox').prop('checked',false); 
+          $("#selectAll").prop('class','btn btn82 btn_nochecked');
+        }                 
+      });
       
       $('#selectdel').click(function () {
         var valArr = new Array;
         $('#list :checkbox[checked]').each(function (i) {
           valArr[i] = $(this).val();
         });
-                    var vals = valArr.join(',');// 方法用于把数组中的所有元素放入一个字符串。//1,2,3
-                    if(vals==''){
-                     alert('请选择要删除的记录');
-                     return;
-                   }
-                   alert(vals);
-                   return;
-                    //AJAX提交到PHP中处理
-                    $.ajax({
-                      url: '',
-                      type: 'post',
-                      data: {'ids': vals},
-                      dataType: 'text',
-                      success: function (d) {
-                            if (d == 1) {//删除成功
-                                window.location.reload();//刷新当前页 
-                            } else if (d == 2) {//删除失败
-                              alert('删除失败');
-                            } else if {//未登录
-                              window.location.href = 'login.html'
-                            }
-                          }
-                        });
+        var vals = valArr.join(',');// 方法用于把数组中的所有元素放入一个字符串。//1,2,3
+        if(vals==''){
+         alert('请选择要删除的记录');
+         return;
+       }
+       alert(vals);
+       return;
+        //AJAX提交到PHP中处理
+        $.ajax({
+          url: '',
+          type: 'post',
+          data: {'ids': vals},
+          dataType: 'text',
+          success: function (d) {
+            if (d == 1) { //删除成功
+                window.location.reload();//刷新当前页 
+            } else if (d == 2) { //删除失败
+              alert('删除失败');
+            } else if (d == 3) { //未登录
+              window.location.href = 'login.html'
+            }
+          }
+        });
 
-                  });	
+      });	
       
     }); 
   </script>

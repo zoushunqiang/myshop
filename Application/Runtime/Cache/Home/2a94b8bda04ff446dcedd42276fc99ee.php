@@ -73,7 +73,7 @@
       <!-- 普通导航菜单 -->
       <ul class="shop_hd_menu_nav" style="margin-left: -150px;">
         <li class="current_link"><a href="<?php echo U('Index/index');?>"><span>首页</span></a></li>
-        <li class="link"><a href="list.html"><span>产品列表</span></a></li>
+        <li class="link"><a href="<?php echo U('Index/Plist');?>"><span>产品列表</span></a></li>
         <li class="link"><a href="<?php echo U('Index/content');?>"><span>关于我们</span></a></li>
       </ul>
       <!-- 普通导航菜单 End -->
@@ -112,44 +112,13 @@
       <div class="tuijian_content">
         <div id="tuijian_content_1" class="tuijian_shangpin" style="display: block;">
           <ul>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="/Public/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">11111111棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="/Public/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="/Public/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="/Public/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="/Public/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
+            <?php if(is_array($new_list)): $i = 0; $__LIST__ = $new_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+                <dl>
+                  <dt><a href="<?php echo U('Index/product',array('pid'=>$vo['pid']),'');?>"><img src="<?php echo ($vo["water_img"]); ?>" width=160 height=160 /></a></dt>
+                  <dd><a href="<?php echo U('Index/product',array('pid'=>$vo['pid']),'');?>"><?php echo (Mystrsub($vo["title"])); ?></a></dd>
+                  <dd> 商城价：<em><?php echo ($vo["price"]); ?></em>元</dd>
+                </dl>
+              </li><?php endforeach; endif; else: echo "" ;endif; ?>
           </ul>
         </div>
       </div>
@@ -166,44 +135,13 @@
       <div class="tuijian_content">
         <div id="tuijian_content_1" class="tuijian_shangpin" style="display: block;">
           <ul>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="/Public/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">11111111棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="/Public/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="/Public/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="/Public/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="/Public/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
+            <?php if(is_array($best_list)): $i = 0; $__LIST__ = $best_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+                <dl>
+                  <dt><a href="<?php echo U('Index/product',array('pid'=>$vo['pid']),'');?>"><img src="<?php echo ($vo["water_img"]); ?>" width=160 height=160 /></a></dt>
+                  <dd><a href="<?php echo U('Index/product',array('pid'=>$vo['pid']),'');?>"><?php echo (Mystrsub($vo["title"])); ?></a></dd>
+                  <dd> 商城价：<em><?php echo ($vo["price"]); ?></em>元</dd>
+                </dl>
+              </li><?php endforeach; endif; else: echo "" ;endif; ?>
           </ul>
         </div>
         </div>

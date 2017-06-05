@@ -1,0 +1,182 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>商品详细页面</title>
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/base.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_common.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_header.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_list.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_goods.css" type="text/css" />
+	<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/topNav.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/shop_goods.js" ></script>
+</head>
+<body>
+	<!-- 头部开始   -->
+	<include file="Public/head" />
+	<!-- 头部 End -->
+</div>
+<div class="clear"></div>
+<!-- 面包屑 注意首页没有 -->
+<div class="shop_hd_breadcrumb">
+	<strong>当前位置：</strong>
+	<span>
+		<a href="">首页</a>&nbsp;›&nbsp;
+		<a href="">产品详细</a>
+
+	</span>
+</div>
+<div class="clear"></div>
+<!-- 面包屑 End -->
+
+<!-- Header End -->
+
+<!-- Goods Body -->
+<div class="shop_goods_bd clear">
+
+	<!-- 商品展示 -->
+	<div class="shop_goods_show">
+		<div class="shop_goods_show_left">
+			<!-- 京东商品展示 -->
+			<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_goodPic.css" type="text/css" />
+			<script type="text/javascript" src="__PUBLIC__/Home/js/shop_goodPic_base.js"></script>
+			<script type="text/javascript" src="__PUBLIC__/Home/js/lib.js"></script>
+			<script type="text/javascript" src="__PUBLIC__/Home/js/163css.js"></script>
+			<div id="preview">
+				<div class=jqzoom >
+					
+					<img height="350" src="{$Info.water_img}" jqimg="{$Info.water_img}" width="350">
+					</div>
+					
+				</div>
+
+				<SCRIPT type=text/javascript>
+					$(function(){			
+						$(".jqzoom").jqueryzoom({
+							xzoom:400,
+							yzoom:400,
+							offset:10,
+							position:"right",
+							preload:1,
+							lens:1
+						});
+						$("#spec-list").jdMarquee({
+							deriction:"left",
+							width:350,
+							height:56,
+							step:2,
+							speed:4,
+							delay:10,
+							control:true,
+							_front:"#spec-right",
+							_back:"#spec-left"
+						});
+						$("#spec-list img").bind("mouseover",function(){
+							var src=$(this).attr("src");
+							$("#spec-n1 img").eq(0).attr({
+								src:src.replace("\/n5\/","\/n1\/"),
+								jqimg:src.replace("\/n5\/","\/n0\/")
+							});
+							$(this).css({
+								"border":"2px solid #ff6600",
+								"padding":"1px"
+							});
+						}).bind("mouseout",function(){
+							$(this).css({
+								"border":"1px solid #ccc",
+								"padding":"2px"
+							});
+						});				
+					})
+				</SCRIPT>
+				<!-- 京东商品展示 End -->
+
+			</div>
+			<div class="shop_goods_show_right" style="margin-top: 50px;">
+				
+				<ul> 
+					<form action="cart.html" method="post">
+						<li>
+							<strong style="font-size:14px; font-weight:bold;">{$Info.title}</strong>
+						</li>
+						<li>
+							<label>价格：</label>
+							<span><strong>{$Info.price}</strong>元</span>
+						</li>
+						
+						<li>
+							<label>累计售出：</label>
+							<span>99件</span>
+						</li>
+						
+						<li class="goods_num">
+							<label>购买数量：</label>
+							<span><a class="good_num_jian" id="good_num_jian" href="javascript:void(0);"></a><input type="text" value="1" id="good_nums" class="good_nums" /><a href="javascript:void(0);" id="good_num_jia" class="good_num_jia"></a>(当前库存0件)</span>
+						</li>
+						
+						<li style="padding:20px 0 20px 20px;">
+							
+							<span> <input type="submit" class="goods_sub goods_sub_gou"   value="加入购物车"></span>
+						</li>
+					</form>
+					
+					<li>  <!--百度分享接口 Start-->
+						<div class="bdsharebuttonbox" style="margin-top:20px;"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+						<script>
+							window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+						</script>
+						<!--百度分享接口 End-->  
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 商品展示 End -->
+
+		<div class="clear mt15"></div>
+		<!-- Goods Left -->
+		<div class="shop_bd_list_left clearfix">
+			
+
+			<!-- 推荐商品 -->
+			<div class="shop_bd_list_bk clearfix">
+				<div class="title">推荐商品</div>
+				<div class="contents clearfix">
+					<ul class="clearfix">
+						<volist name="is_hot" id="vo">
+ 							<li class="clearfix">					
+								<div class="goods_pic"><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}"><img src="{$vo.water_img}" width="160" height=160 /></a></div>
+								<div class="goods_name"><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}">{$vo.title|Mystrsub}</a></div>
+								<div class="goods_xiaoliang">
+									<span class="goods_xiaoliang_link"><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}">去看看</a></span>
+									<span class=" goods_xiaoliang_nums goods_price">¥ {$vo.price} </span>
+								</div>
+							</li>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			<!-- 推荐商品 END -->
+		</div>
+		<!-- Goods Left End -->
+		<!-- 商品详情 -->
+		<div class="shop_goods_bd_xiangqing clearfix">
+			<div class="shop_goods_bd_xiangqing_tab">
+				<ul>
+					<li id="xiangqing_tab_1" ><a href=""><span>商品详情</span></a></li>            </ul>
+				</div>
+				
+				<div class="shop_goods_bd_xiangqing_content clearfix">
+					<div class="xiangqing_contents clearfix">
+						{$vo.content|htmlspecialchars_decode}
+					</div>
+				</div>
+			</div>
+			<!-- 商品详情 End -->
+		</div>
+		<!-- Goods Body End -->
+		<!--底部开始-->
+		<include file="Public/foot" />
+		<!-- 底部 End -->
+
+	</body>
+	</html>

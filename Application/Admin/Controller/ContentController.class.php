@@ -74,20 +74,24 @@ class ContentController extends Controller
     }else{
       // 上传图片
       $upload = new \THink\Upload();
+      // $upload->maxSize = 314578;
       $upload->exts = array('jpg','jpeg','png','gif');
-      $upload->rootPath = './';
-      $upload->savePath = 'upload/banner/';
+      $upload->rootPath = '.';
+      $upload->savePath = '/upload/banner/';
       $info = $upload->uploadOne($img);
       if(!$info){
         $this->error($upload->getError());
       }
-      $orgPath = '/'.$info['savepath'].$info['savename'];
       // 缩略图 和 水印图
+      $orgPath = $info['savepath'].$info['savename'];
+      $pathArr = explode('.', $info['savename']);
+      $thumbPath = $info['savepath'].$pathArr[0].'_thumb.'.$pathArr[1];
+      $waterPath = $info['savepath'].$pathArr[0].'_water.'.$pathArr[1];
+      
       $image = new \Think\Image();
-      $thumbPath = '/upload/thumb/'.uniqid().'.jpg';
-      $waterPath = '/upload/water/'.uniqid().'.jpg';
+      
       $image->open('.'.$orgPath)->thumb(1000, 310,\Think\Image::IMAGE_THUMB_CENTER)->save('.'.$thumbPath);
-      $image->open('.'.$thumbPath)->text('ZouSq','./Public/china.ttf',20,'#000000',\Think\Image::IMAGE_WATER_SOUTHEAST)->save('.'.$waterPath);
+      $image->open('.'.$thumbPath)->text('ZouSq','./Public/china.ttf',20,'#000',\Think\Image::IMAGE_WATER_SOUTHEAST)->save('.'.$waterPath);
       $data = array(
         'title'=>$title,
         'org_img'=>$orgPath,
@@ -124,7 +128,7 @@ class ContentController extends Controller
     unlink($root.$Info['org_img']);
     unlink($root.$Info['thumb_img']);
     unlink($root.$Info['water_img']);
-    // 输出数据库数据
+    // 删除数据库数据
     $re = $Banner->where(array('b_id'=>$b_id))->delete();
     if($re>0){
       $this->success('操作成功');
