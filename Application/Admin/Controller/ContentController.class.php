@@ -19,7 +19,7 @@ class ContentController extends Controller
   }
   // 单页面修改或添加
   public function info(){
-      $Info = $this->Contents->where(array('cat_id'=>I('get.cat_id')))->find();
+      $Info = $this->Contents->where(array('cat_id'=>I('get.cat_id','','intval')))->find();
       $this->assign('Info',$Info);
       $this->display();
   }
@@ -35,7 +35,7 @@ class ContentController extends Controller
     if(empty(I('post.cat_id'))){
       $re = $this->Contents->add($data);
     }else{
-      $re = $this->Contents->where(array('cat_id'=>I('post.cat_id')))->save($data);
+      $re = $this->Contents->where(array('cat_id'=>I('post.cat_id','','intval')))->save($data);
     }
     if($re>0){
       $this->success('操作成功');
@@ -52,7 +52,7 @@ class ContentController extends Controller
   }
   public function bannerinfo(){
     $Banner = M('Banner');
-    $b_id = I('b_id');
+    $b_id = I('b_id','','intval');
     $banInfo = $Banner->where(array('b_id'=>$b_id))->find();
     $this->assign('banInfo',$banInfo);
     $this->display();
@@ -61,7 +61,7 @@ class ContentController extends Controller
   public function doBanner(){
     $Banner = M('Banner');
     $title = I('title');
-    $b_id = I('b_id');
+    $b_id = I('b_id','','intval');
     // echo $b_id;exit;
     $img = $_FILES['img'];
     // 若为修改 同时未上传图片则不做处理图片
@@ -117,7 +117,7 @@ class ContentController extends Controller
   }
   public function delBanner(){
     $Banner = M('Banner');
-    $b_id = I('b_id');
+    $b_id = I('b_id','','intval');
     // 删除图片
     $Info = $Banner->where(array('b_id'=>$b_id))->find();
     $root = dirname(dirname(dirname(dirname(__FILE__))));

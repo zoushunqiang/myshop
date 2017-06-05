@@ -20,7 +20,7 @@ class IndexController extends Controller {
     $this->display();
   }
   public function content(){
-    $cat_id = I('get.cat_id',1,'');
+    $cat_id = I('get.cat_id',1,'intval');
     $Contents = M('Contents');
     $content = $Contents->where(array('cat_id'=>$cat_id))->find();
     $this->assign('content',$content);

@@ -28,9 +28,9 @@
           <tr>
             <td > 
               <input type="button" name="button" class="btn btn82 btn_add" value="新增" onclick="location.href='<?php echo U('System/info');?>'"></td>
-              <td width="35%" >
+             <!--  <td width="35%" >
               用户名 : <input type="text" name="search" class="input-text lh25" size="30" value="<?php echo ($_GET['search']); ?>" >   <input type="submit" name="button" class="btn btn82 btn_search" value="查询">
-              </td>
+              </td> -->
             </tr>
           </tr>
         </table>

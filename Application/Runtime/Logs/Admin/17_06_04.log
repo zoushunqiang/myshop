@@ -24,3 +24,7 @@ ERR: 1146:Table 'myshop.tp_web_config' doesn't exist
 [ 2017-06-04T09:24:07+08:00 ] 127.0.0.1 /index.php/Admin/User/doConfig.html
 ERR: 非法操作:doConfig
 
+[ 2017-06-04T17:24:18+08:00 ] 127.0.0.1 /index.php/admin/index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `tp_admin_user` SET `login_ip`='127.0.0.1',`login_time`='1496568258' WHERE ( uid= )
+
