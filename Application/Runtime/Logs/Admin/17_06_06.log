@@ -1,0 +1,47 @@
+[ 2017-06-06T09:07:58+08:00 ] 127.0.0.1 /index.php/Admin/Product/delInfo
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `tp_product` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `tp_product` WHERE `pid` = 8 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `tp_product` WHERE `pid` = 9 LIMIT 1   [ RunTime:0.0007s ]
+SQL: DELETE FROM `tp_product` WHERE `pid` IN ('8','9') [ RunTime:0.0016s ]
+
+[ 2017-06-06T09:08:01+08:00 ] 127.0.0.1 /index.php/Admin/Product/delInfo
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001016s ]
+SQL: SHOW COLUMNS FROM `tp_product` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `tp_product` WHERE `pid` = 8 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 138 行.
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 139 行.
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 140 行.
+SQL: SELECT * FROM `tp_product` WHERE `pid` = 9 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 138 行.
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 139 行.
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 140 行.
+SQL: DELETE FROM `tp_product` WHERE `pid` IN ('8','9') [ RunTime:0.0004s ]
+
+[ 2017-06-06T09:08:04+08:00 ] 127.0.0.1 /index.php/Admin/Product/delInfo
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `tp_product` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `tp_product` WHERE `pid` = 8 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 138 行.
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 139 行.
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 140 行.
+SQL: SELECT * FROM `tp_product` WHERE `pid` = 9 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 138 行.
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 139 行.
+NOTIC: [2] unlink(/Applications/MAMP/htdocs/MyShop): Operation not permitted /Applications/MAMP/htdocs/MyShop/Application/Admin/Controller/ProductController.class.php 第 140 行.
+SQL: DELETE FROM `tp_product` WHERE `pid` IN ('8','9') [ RunTime:0.0004s ]
+
+[ 2017-06-06T09:08:17+08:00 ] 127.0.0.1 /index.php/Admin/Product/delInfo
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `tp_product` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `tp_product` WHERE `pid` = 10 LIMIT 1   [ RunTime:0.0006s ]
+SQL: DELETE FROM `tp_product` WHERE `pid` IN ('10') [ RunTime:0.0019s ]
+

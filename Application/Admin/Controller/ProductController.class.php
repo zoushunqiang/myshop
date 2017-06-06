@@ -56,9 +56,7 @@ class ProductController extends Controller
       $info = $upload->uploadOne($img);
 
       if(!$info){
-        
         $this->error($upload->getError());
-
       }
 
       // 缩略图 水印图

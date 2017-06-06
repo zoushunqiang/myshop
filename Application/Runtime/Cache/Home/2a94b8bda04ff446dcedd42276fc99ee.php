@@ -73,7 +73,7 @@
       <!-- 普通导航菜单 -->
       <ul class="shop_hd_menu_nav" style="margin-left: -150px;">
         <li class="current_link"><a href="<?php echo U('Index/index');?>"><span>首页</span></a></li>
-        <li class="link"><a href="<?php echo U('Index/Plist');?>"><span>产品列表</span></a></li>
+        <li class="link"><a href="<?php echo U('Product/Plist');?>"><span>产品列表</span></a></li>
         <li class="link"><a href="<?php echo U('Index/content');?>"><span>关于我们</span></a></li>
       </ul>
       <!-- 普通导航菜单 End -->
@@ -114,8 +114,8 @@
           <ul>
             <?php if(is_array($new_list)): $i = 0; $__LIST__ = $new_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
                 <dl>
-                  <dt><a href="<?php echo U('Index/product',array('pid'=>$vo['pid']),'');?>"><img src="<?php echo ($vo["water_img"]); ?>" width=160 height=160 /></a></dt>
-                  <dd><a href="<?php echo U('Index/product',array('pid'=>$vo['pid']),'');?>"><?php echo (Mystrsub($vo["title"])); ?></a></dd>
+                  <dt><a href="<?php echo U('Product/info',array('pid'=>$vo['pid']),'');?>"><img src="<?php echo ($vo["water_img"]); ?>" width=160 height=160 /></a></dt>
+                  <dd><a href="<?php echo U('Product/info',array('pid'=>$vo['pid']),'');?>"><?php echo (Mystrsub($vo["title"])); ?></a></dd>
                   <dd> 商城价：<em><?php echo ($vo["price"]); ?></em>元</dd>
                 </dl>
               </li><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -137,8 +137,8 @@
           <ul>
             <?php if(is_array($best_list)): $i = 0; $__LIST__ = $best_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
                 <dl>
-                  <dt><a href="<?php echo U('Index/product',array('pid'=>$vo['pid']),'');?>"><img src="<?php echo ($vo["water_img"]); ?>" width=160 height=160 /></a></dt>
-                  <dd><a href="<?php echo U('Index/product',array('pid'=>$vo['pid']),'');?>"><?php echo (Mystrsub($vo["title"])); ?></a></dd>
+                  <dt><a href="<?php echo U('Product/info',array('pid'=>$vo['pid']),'');?>"><img src="<?php echo ($vo["water_img"]); ?>" width=160 height=160 /></a></dt>
+                  <dd><a href="<?php echo U('Product/info',array('pid'=>$vo['pid']),'');?>"><?php echo (Mystrsub($vo["title"])); ?></a></dd>
                   <dd> 商城价：<em><?php echo ($vo["price"]); ?></em>元</dd>
                 </dl>
               </li><?php endforeach; endif; else: echo "" ;endif; ?>

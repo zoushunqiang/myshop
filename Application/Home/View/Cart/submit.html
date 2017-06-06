@@ -1,0 +1,229 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>管理收货地址</title>
+	<link rel="stylesheet" href="css/base.css" type="text/css" />
+	<link rel="stylesheet" href="css/shop_common.css" type="text/css" />
+	<link rel="stylesheet" href="css/shop_header.css" type="text/css" />
+	<link rel="stylesheet" href="css/shop_manager.css" type="text/css" />
+		<link rel="stylesheet" href="css/shop_gouwuche.css" type="text/css" />
+	 <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js" ></script>
+    <script type="text/javascript" src="js/topNav.js" ></script>
+</head>
+<body>
+	<!-- 头部开始   -->
+	<div class="shop_hd">
+		<!-- Header TopNav -->
+		<div class="shop_hd_topNav">
+			<div class="shop_hd_topNav_all">
+				<!-- Header TopNav Left -->
+				<div class="shop_hd_topNav_all_left">
+					<p>您好，欢迎来到<b><a href="index.html">百货商城</a></b></p>
+				</div>
+				<!-- Header TopNav Left End -->
+				<!-- Header TopNav Right -->
+				<div class="shop_hd_topNav_all_right">
+					<ul class="topNav_quick_menu">
+						<li>
+							<div class="topNav_menu"><a href="cart.html" class="topNavHover">购物车<b>0</b></a></div>
+						</li>
+						<li>
+							<div class="topNav_menu">
+								<a href="login.html" class="topNavHover">会员登陆</a>  <a href="reg.html" class="topNavHover">会员注册</a>				
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Header TopNav Right End -->
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		<!-- Header TopNav End -->
+		<!-- TopHeader Center -->
+		<div class="shop_hd_header">
+			<div class="shop_hd_header_logo"><h1 class="logo"><a href="index.html"><img src="images/logo.png" alt="百货" /></a><span>百货</span></h1></div>
+			<div class="shop_hd_header_search">
+                 <ul class="shop_hd_header_search_tab">
+			        <li id="search" class="current">商品</li>	     
+			    </ul>
+               <div class="clear"></div>
+			    <div class="search_form">
+			    	<form method="get" action="">
+			    		<div class="search_formstyle">
+			    			<input type="text" class="search_form_text" name="search_content" value="" placeholder="搜索其实很简单"  />
+			    			<input type="submit" class="search_form_sub" name="secrch_submit" value="" title="搜索" />
+			    		</div>
+			    	</form>
+			    </div>
+  
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!-- TopHeader Center End -->
+		<!-- Header Menu -->
+		<div class="shop_hd_menu">
+			<!-- 普通导航菜单 -->
+			<ul class="shop_hd_menu_nav" style="margin-left: -150px;">
+				<li class="current_link"><a href="index.html"><span>首页</span></a></li>
+				<li class="link"><a href="list.html"><span>产品列表</span></a></li>
+				<li class="link"><a href="about.html"><span>关于我们</span></a></li>
+			</ul>
+			<!-- 普通导航菜单 End -->
+		</div>
+		<!-- Header Menu End -->
+	</div>
+	<div class="clear"></div>
+	<!-- 头部 End -->
+    
+
+
+    
+	<!-- 面包屑 注意首页没有 -->
+	<div class="shop_hd_breadcrumb">
+		<strong>当前位置：</strong>
+		<span>
+			<a href="">首页</a>&nbsp;›&nbsp;
+			<a href="">我的商城</a>&nbsp;›&nbsp;
+			<a href="">确认订单</a>
+		</span>
+	</div>
+	<div class="clear"></div>
+	<!-- 面包屑 End -->
+
+
+	<!-- 购物流程导航 -->
+			<div class="shop_gwc_bd_contents_lc clearfix">
+				<ul>
+					<li class="step_a ">确认购物清单</li>
+					<li class="step_b hover_b">确认收货人资料及送货方式</li>
+					<li class="step_c">购买完成</li>
+				</ul>
+			</div>
+<!-- 购物流程导航 End -->
+
+
+	<div class="shop_member_bd clearfix">
+		
+		
+		<!-- 购物列表 -->
+		<div class="shop_member_bd_right clearfix">
+			 <div class="tijiao">
+               <h3>确认收货地址</h3>
+               <ul class="tijiao1">
+             
+                 <li>
+                   <span class="span1 fl"><input type="radio" name="is_addr" id="is_addr" value="1" checked><label for="add">张伟 浙江省省杭州市西湖区夏园路56号阿里巴巴大厦  230000    13245678911</label></span>  
+                 </li>
+                 
+                   <li><span class="span1 fl" style="line-height:35px;">
+                      地区选择 :  &nbsp;<select class="s1">
+                         <option>安徽</option>
+                       </select>   &nbsp; &nbsp;
+                       
+                        <select class="s1">
+                         <option>合肥</option>
+                       </select>   &nbsp; &nbsp;
+                       
+                       <select class="s1">
+                         <option>蜀山</option>
+                       </select>  &nbsp; &nbsp;
+                       <br>
+                       详细地址 :  &nbsp;<input type="text" name="addr" value="" class="s1 t1" style="width:250px;"><br>
+                       电　　话 :  &nbsp;<input type="text" name="tel" value="" class="s1 t1" style="width:250px;"><br>
+                         收 货  &nbsp;人 :  &nbsp;<input type="text" name="consignee" value="" class="s1 t1" style="width:250px;">
+                       </span>
+                </li>
+                
+               </ul>
+           </div>
+           <div class="tijiao mt30">
+                       <h3>支付方式</h3>
+                     <ul class="tijiao1">
+                        <li>
+                            <span class="span1 fl"><input type="radio" name="payid" id="chinabank" value="1" checked><label for="chinabank">网银在线</label></span>  
+                        </li>
+                           <li>
+                            <span class="span1 fl"><input type="radio" name="payid" id="alipay" value="2" ><label for="alipay">支付宝</label></span>  
+                        </li>
+                     </ul>
+                </div>
+			<div class="shop_meber_bd_good_lists clearfix">
+				<div class="title"><h3>购物清单</h3></div>
+				<table>
+					<thead class="tab_title">
+						<th style="width:500px;"><span>商品信息</span></th>
+						<th style="width:100px;"><span>单价</span></th>
+						<th style="width:100px;"><span>数量</span></th>
+						<th style="width:110px;"><span>订单总价</span></th>
+						
+					</thead>
+					<tbody>
+                        <!--购物产品循环开始-->
+						<tr><td colspan="5">
+							<table class="good">					
+								<tbody>
+									<tr>
+										<td class="dingdan_pic"><img src="images/1dbc94fa0d60cba3990b89ccb01f82c2.jpg_tiny.jpg" /></td>
+										<td class="dingdan_title"><a href="">李宁 lining 专柜正品 足球鞋 女式运动鞋【演示数据】</a></td>
+										<td class="dingdan_danjia">￥<strong>25.00</strong></td>
+										<td class="dingdan_shuliang">1</td>
+										<td class="dingdan_zongjia">￥<strong>25.00</strong></td>
+										
+									</tr>
+								</tbody>
+							</table>
+						</td></tr>
+                        
+                        <tr><td colspan="5">
+							<table class="good">					
+								<tbody>
+									<tr>
+										<td class="dingdan_pic"><img src="images/1dbc94fa0d60cba3990b89ccb01f82c2.jpg_tiny.jpg" /></td>
+										<td class="dingdan_title"><a href="">李宁 lining 专柜正品 足球鞋 女式运动鞋【演示数据】</a></td>
+										<td class="dingdan_danjia">￥<strong>25.00</strong></td>
+										<td class="dingdan_shuliang">1</td>
+										<td class="dingdan_zongjia">￥<strong>25.00</strong></td>
+										
+									</tr>
+								</tbody>
+							</table>
+						</td></tr>
+                        
+                  <!--购物产品循环结束-->
+					</tbody>
+				</table>
+			</div>
+			<div class="jisuan">
+               <span>总计：<em>1040</em> 元</span>
+              <a href="javascript:history.go(-1)"  style=" line-height:66px; padding-right:40px; ">返回购物车</a>
+
+               <input type="button" class="a3" value="提交订单" style="border:none" onClick="location.href='success.html'">
+              </div>
+              
+		</div>
+			</div>
+
+
+
+
+	<!--底部开始-->
+<div clas="clear"></div>
+	<div class="footer clear wrap1000">
+            <div class="shop_footer_link">
+                <p>
+                    <a href="">首页</a>|
+                    <a href="">关于我们</a>|
+                    <a href="">法律声明</a>|
+                    <a href="">隐私声明</a>|
+                    <a href="">联系我们</a>
+                </p>
+            </div>
+            <div class="shop_footer_copy">
+                <p>©2016 百货商城 版权所有</p>
+            </div>
+        </div>
+	<!-- 底部 End -->
+</body>
+</html>

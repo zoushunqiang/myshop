@@ -72,3 +72,17 @@
 .pagination ul li{float:left; margin:0 3px;}
 .pagination ul li span{display: inline-block; padding:5px 5px; border:1px solid #CCCCCC; color:#999999;}
 .pagination ul li span.currentpage{background-color:#FEA900; color:#FFF; font-weight: bold; border-color:#FEA900;}
+
+/* ThinkPHP Page */
+.pagination div {float:right}
+.pagination div a {display: inline-block; padding:5px 5px; border:1px solid #CCCCCC; color:#999999;float:left; margin:0 3px;}
+.pagination div span{display: inline-block; padding:5px 5px; border:1px solid #CCCCCC; color:#999999;float:left; margin:0 3px;}
+.pagination div span.current{background-color:#FEA900; color:#FFF; font-weight: bold; border-color:#FEA900;}
+
+
+
+
+
+
+
+

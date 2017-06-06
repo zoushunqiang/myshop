@@ -49,7 +49,10 @@ class UserController extends Controller {
   // 修改页面
   public function change(){
     $User = M('User');
-    $Info = $User->where(array('uid'=>I('get.uid')))->find();
+    if(empty(I('get.uid','','intval'))){
+      $this->error('用户不存在');
+    }
+    $Info = $User->where(array('uid'=>I('get.uid', '', 'intval')))->find();
     $this->assign('Info',$Info);
     $this->display();
   }  

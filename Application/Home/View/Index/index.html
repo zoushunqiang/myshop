@@ -48,8 +48,8 @@
             <volist name="new_list" id="vo">
               <li>
                 <dl>
-                  <dt><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}"><img src="{$vo.water_img}" width=160 height=160 /></a></dt>
-                  <dd><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}">{$vo.title|Mystrsub}</a></dd>
+                  <dt><a href="{:U('Product/info',array('pid'=>$vo['pid']),'')}"><img src="{$vo.water_img}" width=160 height=160 /></a></dt>
+                  <dd><a href="{:U('Product/info',array('pid'=>$vo['pid']),'')}">{$vo.title|Mystrsub}</a></dd>
                   <dd> 商城价：<em>{$vo.price}</em>元</dd>
                 </dl>
               </li>
@@ -73,8 +73,8 @@
             <volist name="best_list" id="vo">
               <li>
                 <dl>
-                  <dt><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}"><img src="{$vo.water_img}" width=160 height=160 /></a></dt>
-                  <dd><a href="{:U('Index/product',array('pid'=>$vo['pid']),'')}">{$vo.title|Mystrsub}</a></dd>
+                  <dt><a href="{:U('Product/info',array('pid'=>$vo['pid']),'')}"><img src="{$vo.water_img}" width=160 height=160 /></a></dt>
+                  <dd><a href="{:U('Product/info',array('pid'=>$vo['pid']),'')}">{$vo.title|Mystrsub}</a></dd>
                   <dd> 商城价：<em>{$vo.price}</em>元</dd>
                 </dl>
               </li>

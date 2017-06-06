@@ -61,21 +61,20 @@
 		</div>
 	</div>
 	<!--底部开始-->
-	<div clas="clear"></div>
-	<div class="footer clear wrap1000">
-		<div class="shop_footer_link">
-			<p>
-				<a href="">首页</a>|
-				<a href="">关于我们</a>|
-				<a href="">法律声明</a>|
-				<a href="">隐私声明</a>|
-				<a href="">联系我们</a>
-			</p>
-		</div>
-		<div class="shop_footer_copy">
-			<p>©2016 百货商城 版权所有</p>
-		</div>
-	</div>
+	<!--底部开始-->
+<div clas="clear"></div>
+<div class="footer clear wrap1000">
+  <div class="shop_footer_link">
+    <p>
+      <a href="<?php echo U('Index/index');?>">首页</a>|
+      <?php if(is_array($contents)): $i = 0; $__LIST__ = $contents;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Index/content',array('cat_id'=>$vo['cat_id']),'');?>"><?php echo ($vo["cat_name"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+    </p>
+  </div>
+  <div class="shop_footer_copy">
+    <p>©2016 百货商城 版权所有</p>
+  </div>
+</div>
+<!-- 底部 End -->
 	<!-- 底部 End -->
 	<script>
 		function changVerify(obj){

@@ -1,0 +1,26 @@
+[ 2017-06-06T09:49:11+08:00 ] 127.0.0.1 /index.php/Home/Index/Plist.html
+ERR: 非法操作:Plist
+
+[ 2017-06-06T09:49:55+08:00 ] 127.0.0.1 /index.php/Home/Product/info/pid/12
+ERR: 无法加载控制器:Product
+
+[ 2017-06-06T09:50:22+08:00 ] 127.0.0.1 /index.php/Home/Product/info/pid/12
+ERR: 无法加载控制器:Product
+
+[ 2017-06-06T09:50:26+08:00 ] 127.0.0.1 /index.php/Home/Product/info/pid/12
+ERR: 无法加载控制器:Product
+
+[ 2017-06-06T13:52:28+08:00 ] 127.0.0.1 /index.php/Home/Product/cart/pid/1.html?
+ERR: 模板不存在:./Application/Home/View/Product/cart.html
+
+[ 2017-06-06T16:26:01+08:00 ] 127.0.0.1 /index.php/Home/Product/Plist.html
+ERR: 1054:Unknown column 'uid' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `tp_product` ORDER BY uid desc LIMIT 0,5  
+
+[ 2017-06-06T21:56:40+08:00 ] 127.0.0.1 /index.php/Home/Cart/cart/pid/7
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `tp_cart` (`uid`,`pid`,`number`,`add_time`) VALUES ('17','1','1','1496757400')
+
+[ 2017-06-06T21:57:12+08:00 ] 127.0.0.1 /index.php/Home/Cart/cart/pid/7
+ERR: Think\Model:selsct方法不存在！
+

@@ -3,6 +3,13 @@ namespace Home\Controller;
 use Think\Controller;
 class UserController extends Controller
 {
+  public function __construct(){
+    parent::__construct();
+    // 获取单页面列表
+    $Contents = M('Contents');
+    $content_list = $Contents->select();
+    $this->assign('contents',$content_list);
+  }
   // 用户注册
   public function reg(){
     $this->display(); // 载入模版 替换内容字符串 生成缓存 输出模版渲染
