@@ -22,7 +22,7 @@ class OrderController extends Controller
       $this->error('购物车为空，请前往添加商品');
     }
     // 输出地址
-    $addr = M('UserAddress')->where(array('uid'=>session('uid')))->select();
+    $addr = M('UserAddress')->where(array('uid'=>session('uid')))->order('id desc')->select();
     // 省 市 级三级联动
     $City = M('City');
     $province = $City->where(array('pid'=>'100000'))->select();
@@ -60,9 +60,9 @@ class OrderController extends Controller
     if(!preg_match('/^1[3578]\d{9}$/', $tel)){
       exit('手机格式错误');
     }
-    $UserAssress = M('UserAddress');
+    $UserAddress = M('UserAddress');
     $count = $UserAddress->where(array('uid'=>session('uid')))->count();
-    if($count>=4){
+    if($count>=5){
       exit('最多保存5个地址');
     }
     $data = array(
@@ -76,7 +76,7 @@ class OrderController extends Controller
       'uid' => session('uid'),
       );
 
-    $re = $UserAssress->add($data);
+    $re = $UserAddress->add($data);
     if($re>0){
       echo '添加成功';
       // echo $consignee,'&nbsp;&nbsp;',$province,$city,$area,$addr,'&nbsp;&nbsp;',$tel;
