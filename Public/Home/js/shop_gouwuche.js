@@ -8,3 +8,16 @@ jQuery(function(){
 	/* 删除购物车商品 */
 	jQuery(".shop_good_delete").goodDelete({zid:'good_zongjia',xclass:'good_xiaojis'});
 });
+
+// 计算金额小计 总计
+function count(){
+  var sumAll = 0;
+  for (var i = 0; i < $('tr .good_nums').length; i++) {
+    var num = parseFloat($('tr .good_nums').eq(i).val());
+    var price = parseFloat($('tr #danjia_001').eq(i).html());
+    var sum = num*price;
+    sumAll += sum;
+    $('tr .good_xiaojis').eq(i).html(sum.toFixed(2));
+  }
+  $('#good_zongjia').html(sumAll.toFixed(2));
+}

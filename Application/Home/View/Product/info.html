@@ -86,7 +86,7 @@
 			</div>
 			<div class="shop_goods_show_right" style="margin-top: 50px;">
 				<ul> 
-					<form action="{:U('Cart/cart',array('pid'=>$Info['pid']),'')}" method="post">
+					<form action="{:U('Cart/add')}" method="post">
 						<li>
 							<strong style="font-size:14px; font-weight:bold;">{$Info.title}</strong>
 						</li>
@@ -103,7 +103,8 @@
 							<span>
 								<a class="good_num_jian" id="good_num_jian" href="javascript:void(0);"></a>
 								<input type="text" value="1" name="good_nums" id="good_nums" class="good_nums" />
-								<a href="javascript:void(0);" id="good_num_jia" class="good_num_jia"></a>(当前库存<b>{$Info.stock}</b>件)
+								<input type="hidden" name="pid" value="{$Info.pid}" >
+								<a href="javascript:void(0);" id="good_num_jia" class="good_num_jia"></a>(当前库存<b id="stock">{$Info.stock}</b>件)
 							</span>
 						</li>
 						<li style="padding:20px 0 20px 20px;">

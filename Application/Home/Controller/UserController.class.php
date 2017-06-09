@@ -54,6 +54,8 @@ class UserController extends Controller
   public function doLogout(){
     if(!empty(cookie('login'))) cookie('login',null);
     if(!empty(session('username'))) session('username',null);
+    if(!empty(session('uid'))) session('uid',null);
+    if(!empty(session('cartCount'))) session('cartCount',null);  // 清空购物车统计
     $this->redirect('Index/index');
   }
   // 生成验证码

@@ -17,6 +17,11 @@
  	jQuery("#good_num_jia").click(function(){
  		var num = jQuery("#good_nums").val();
  		num = parseInt(num);
+    stock = parseInt(jQuery("#stock").html());
+    if(num>=stock){
+      alert('库存不足');
+      return;
+    }
  		num = num+1;
  		jQuery("#good_nums").val(num);
  	});

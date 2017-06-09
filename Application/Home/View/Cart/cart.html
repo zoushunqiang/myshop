@@ -6,15 +6,13 @@
 	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_common.css" type="text/css" />
 	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_header.css" type="text/css" />
 	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_gouwuche.css" type="text/css" />
-    <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.js" ></script>
-    <script type="text/javascript" src="__PUBLIC__/Home/js/topNav.js" ></script>
-
+  <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.js" ></script>
+  <script type="text/javascript" src="__PUBLIC__/Home/js/topNav.js" ></script>
 </head>
 <body>
 	<!-- 头部开始   -->
 	<include file="Public/head" />
 	<!-- 头部 End -->
-
 	</div>
 	<div class="clear"></div>
 	<!-- 面包屑 注意首页没有 -->
@@ -28,15 +26,12 @@
 	</div>
 	<div class="clear"></div>
 	<!-- 面包屑 End -->
-
 	<!-- Header End -->
-	
 	<!-- 购物车 Body -->
 	<div class="shop_gwc_bd clearfix">
-    
-
 		<!-- 购物车有商品 -->
 <div class="shop_gwc_bd_contents clearfix">
+			<notempty name="list">
 			<!-- 购物流程导航 -->
 			<div class="shop_gwc_bd_contents_lc clearfix">
 				<ul>
@@ -46,9 +41,8 @@
 				</ul>
 			</div>
 <!-- 购物流程导航 End -->
-
 			<!-- 购物车列表 -->
-			<table>
+				<table>
 				<thead>
 					<tr>
 						<th colspan="2"><span>商品</span></th>
@@ -59,40 +53,113 @@
 					</tr>
 				</thead>
 				<tbody>
-					<volist name="list" id="vo">	
+					<volist name="list" id="vo">
 						<tr>
 							<td class="gwc_list_pic"><a href=""><img src="{$vo.water_img}" /></a></td>
 							<td class="gwc_list_title"><a href="">{$vo.title}</a></td>
 							<td class="gwc_list_danjia"><span>￥<strong id="danjia_001">{$vo.price}</strong></span></td>
-							<td class="gwc_list_shuliang"><span><a class="good_num_jian this_good_nums" did="danjia_001" xid="xiaoji_001" ty="-" valId="goods_001" href="javascript:void(0);">-</a><input type="text" value="{$vo.number}" id="goods_001" class="good_nums" /><a href="javascript:void(0);" did="danjia_001" xid="xiaoji_001" ty="+" class="good_num_jia this_good_nums" valId="goods_001">+</a></span></td>
-							<td class="gwc_list_xiaoji"><span>￥<strong id="xiaoji_001" class="good_xiaojis">{$vo.count}</strong></span></td>
-							<td class="gwc_list_caozuo"><a href="javascript:void(0);" class="shop_good_delete">删除</a></td>
+							<td class="gwc_list_shuliang">
+								<span>
+									<a class="good_num_jian this_good_nums" did="danjia_001" id="xiaoji_001" ty="-" valId="goods_001" href="javascript:void(0);" onclick="countdown(this)" >-</a>
+									<input type="text" value="{$vo.number}" id="goods_001" class="good_nums" style="text-align: center;" />
+									<input type="hidden" name="pid" value="{$vo.pid}" >
+									<a href="javascript:void(0);" did="danjia_001" xid="xiaoji_001" ty="+" class="good_num_jia this_good_nums" valId="goods_001" onclick="countup(this)" >+</a>
+									<br>
+									<span>库存{$vo.stock}件</span>
+								</span>
+							</td>
+							<td class="gwc_list_xiaoji"><span>￥<strong id="xiaoji_001" class="good_xiaojis"></strong></span></td>
+							<td class="gwc_list_caozuo"><a href="{:U('Cart/delInfo',array('pid'=>$vo['pid']),'')}" class="shop_good_delete">删除</a></td>
 						</tr>
 					</volist>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td colspan="6">
-							<div class="gwc_foot_zongjia">商品总价<span>￥<strong id="good_zongjia">12750.00</strong></span></div>
+							<div class="gwc_foot_zongjia">商品总价<span>￥<strong id="good_zongjia"></strong></span></div>
 							<div class="clear"></div>
 							<div class="gwc_foot_links">
-								<a href="list.html" class="go">继续购物</a>
-								<a href="submit.html" class="op">确认并填写订单</a>
+								<a href="{:U('Product/Plist')}" class="go">继续购物</a>
+								<a href="{:U('Order/order')}" class="op">确认并填写订单</a>
 							</div>
 						</td>
 					</tr>
 				</tfoot>
-			</table>
+				</table>
+			<else />
+				<div style="color:red; padding: 10px; margin: 0 auto; background-color: #E2FAD2;" >购物车为空。</div>
+			</notempty>
 			<!-- 购物车列表 End -->
 		</div>
 		<!-- 购物车有商品 end -->
 
 	</div>
 	<!-- 购物车 Body End -->
-
 	<!--底部开始-->
 	<include file="Public/foot" />
 	<!-- 底部 End -->
-
+	<script>
+		// 初始化小计 总计
+		$(function(){
+			count();
+		});
+		// 计算金额小计 总计
+		function count(){
+			var sumAll = 0;
+			for (var i = 0; i < $('tr .good_nums').length; i++) {
+				var num = parseFloat($('tr .good_nums').eq(i).val());
+				var price = parseFloat($('tr #danjia_001').eq(i).html());
+				var sum = num*price;
+				sumAll += sum;
+				$('tr .good_xiaojis').eq(i).html(sum.toFixed(2));
+			}
+			$('#good_zongjia').html(sumAll.toFixed(2));
+		}
+		// 减少订单
+		function countdown(obj){
+			var good_nums = obj.nextSibling.nextSibling.value;
+			var pid = obj.nextSibling.nextSibling.nextSibling.nextSibling.value;
+			if(good_nums>1){
+				$.ajax({
+					url:"{:U('Cart/add')}",
+					type:'post',
+					data:{
+						'pid':pid,
+						'good_nums':-1,
+					},
+					dataType:'text',
+					async:true,
+					success:function(d){
+						if(d>0){  // 大于0表示变更后的数据大于0并且小于库存
+							obj.nextSibling.nextSibling.value = d;
+							count();
+						}
+					}
+				});
+			}
+		}
+		// 增加订单
+		function countup(obj){
+			var pid = obj.previousSibling.previousSibling.value;
+			$.ajax({
+				url:"{:U('Cart/add')}",
+				type:'post',
+				data:{  // 大于0表示变更后的数据大于0并且小于库存
+					'pid':pid,
+					'good_nums':1,
+				},
+				dataType:'text',
+				async:true,
+				success:function(d){
+					if(d>0){
+						obj.previousSibling.previousSibling.previousSibling.previousSibling.value = d;
+						count();
+					}else{
+						alert('库存不足');
+					}
+				}
+			});
+		}
+	</script>
 </body>
 </html>
