@@ -1,7 +1,9 @@
 <!doctype html>
 <head>
   <meta charset="utf-8">
-  <title>百货商城-首页</title>
+  <meta name="keyword" content="{$web_config.keyword}" >
+  <meta name="description" content="{$web_config.description}" >
+  <title>{$web_config.title}-首页</title>
   <link rel="stylesheet" href="__PUBLIC__/Home/css/base.css" type="text/css" />
   <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_common.css" type="text/css" />
   <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_header.css" type="text/css" />
@@ -21,12 +23,11 @@
         <div>
           <dl class=""></dl>
           <!--轮播广告-->
-          <dl class="">
-            <dt><a href="" title="" target="_blank"><img src="__PUBLIC__/Home/images/e2dfe57add8fff66ed0964b1effd39b9.jpg" alt="2011城市主题公园亲子游" ></a></dt>
-          </dl>
-          <dl class="">
-            <dt><a href="" title="" target="_blank"><img src="__PUBLIC__/Home/images/e50b5d398e3b890f08e14defbc71a94d.jpg" alt="潜入城市周边清幽之地"></a></dt>
-          </dl>
+          <volist name="ban_list" id="vo">
+            <dl class="">
+              <dt><a href="" title="" target="_blank"><img src="{$vo.water_img}" alt="{$vo.title}" ></a></dt>
+            </dl>
+          </volist>
           <!--轮播广告 END-->
         </div>
       </div>
@@ -44,44 +45,15 @@
       <div class="tuijian_content">
         <div id="tuijian_content_1" class="tuijian_shangpin" style="display: block;">
           <ul>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">11111111棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
+            <volist name="new_list" id="vo">
+              <li>
+                <dl>
+                  <dt><a href="{:U('Product/info',array('pid'=>$vo['pid']),'')}"><img src="{$vo.water_img}" width=160 height=160 /></a></dt>
+                  <dd><a href="{:U('Product/info',array('pid'=>$vo['pid']),'')}">{$vo.title|Mystrsub}</a></dd>
+                  <dd> 商城价：<em>{$vo.price}</em>元</dd>
+                </dl>
+              </li>
+            </volist>
           </ul>
         </div>
       </div>
@@ -98,44 +70,15 @@
       <div class="tuijian_content">
         <div id="tuijian_content_1" class="tuijian_shangpin" style="display: block;">
           <ul>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">11111111棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-            <li>
-              <dl>
-                <dt><a href="product.html"><img src="__PUBLIC__/Home/images/365_7d5e08127b8d6799209674ecffbfc624.jpg_small.jpg" /></a></dt>
-                <dd><a href="product.html">外贸田园绗缝全棉布艺双人沙发垫沙发巾飘窗垫素雅黄花</a></dd>
-                <dd> 商城价：<em>256.00</em>元</dd>
-              </dl>
-            </li>
-
+            <volist name="best_list" id="vo">
+              <li>
+                <dl>
+                  <dt><a href="{:U('Product/info',array('pid'=>$vo['pid']),'')}"><img src="{$vo.water_img}" width=160 height=160 /></a></dt>
+                  <dd><a href="{:U('Product/info',array('pid'=>$vo['pid']),'')}">{$vo.title|Mystrsub}</a></dd>
+                  <dd> 商城价：<em>{$vo.price}</em>元</dd>
+                </dl>
+              </li>
+            </volist>
           </ul>
         </div>
         </div>

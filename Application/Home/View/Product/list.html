@@ -1,0 +1,103 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>商品列表页</title>
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/base.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_common.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_header.css" type="text/css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_list.css" type="text/css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/style.css" type="text/css" />
+    <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.js" ></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/topNav.js" ></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/shop_list.js" ></script>
+</head>
+<body>
+	<!-- 头部开始   -->
+	<include file="Public/head" />
+	<!-- 头部 End -->
+	
+	<div class="clear"></div>
+	<!-- 面包屑 注意首页没有 -->
+	<div class="shop_hd_breadcrumb">
+		<strong>当前位置：</strong>
+		<span>
+			<a href="{:U('Index/index')}">首页</a>&nbsp;›&nbsp;
+			<a href="{:U('Index/Plist')}">商品列表</a>
+		</span>
+	</div>
+	<div class="clear"></div>
+	<!-- 面包屑 End -->
+	<!-- Header End -->
+	<div class="shop_bd clearfix">
+<div class="shop_bd_list_right clearfix" style="width: 1000px;">
+<!-- 条件筛选框 -->
+<div class="jifen">
+      <ul>    
+          <li class="overflow">
+            <i class="fl">价格：</i>
+              <span class="fl">
+              	<a <eq name="max" value="" > style="color:red;" </eq> href="{:U('Product/Plist',array('sort'=>$sort))}">不限</a>
+             		<a <eq name="max" value="100" > style="color:red;" </eq> href="{:U('Product/Plist',array('sort'=>$sort, 'min'=>'0', 'max'=>'100'))}">0~100元</a>
+             		<a <eq name="max" value="200" > style="color:red;" </eq> href="{:U('Product/Plist',array('sort'=>$sort, 'min'=>'100', 'max'=>'200'))}">100~200元</a>
+             		<a <eq name="max" value="300" > style="color:red;" </eq> href="{:U('Product/Plist',array('sort'=>$sort, 'min'=>'200', 'max'=>'300'))}">200~300元</a>
+             		<a <eq name="max" value="500" > style="color:red;" </eq> href="{:U('Product/Plist',array('sort'=>$sort, 'min'=>'300', 'max'=>'500'))}">300~500元</a>
+             		<a <eq name="max" value="10000" > style="color:red;" </eq> href="{:U('Product/Plist',array('sort'=>$sort, 'min'=>'500', 'max'=>'10000'))}">500~10000元</a>
+             	</span>
+            <i class="fl i1">
+            	<form action="{:U('Product/Plist',array('sort'=>$sort))}" method="get" >
+            		<input type="text" class="text4" name="min" value="{$min}"> - <input type="text" class="text4" name="max" value="{$max}">&nbsp;&nbsp;元
+            		<input type="image" src="__PUBLIC__/Home/images/a1.jpg">
+            	</form>
+            </i>
+            
+          </li>
+      </ul>
+   </div>
+   <!-- 条件筛选END -->
+			<div class="sort-bar">
+				<div class="bar-l"> 
+          <!-- 排序方式S -->
+          <ul class="array">
+            <li <eq name="sort" value="is_new-asc" > class="selected" </eq> ><a title="点击按人气从高到低排序"  href="{:U('Product/Plist',array('sort'=>'is_new-asc', 'min'=>$min, 'max'=>$max))}">新品</a></li>
+            <li <eq name="sort" value="is_best-desc" > class="selected" </eq> ><a title="点击按信用从高到低排序"  href="{:U('Product/Plist',array('sort'=>'is_best-desc', 'min'=>$min, 'max'=>$max))}">精品</a></li>
+						<if condition=" $sort eq 'price-asc' ">
+            	<li <eq name="sort" value="price-asc" > class="selected" </eq> ><a title="点击按价格从高到低排序"  href="{:U('Product/Plist',array('sort'=>'price-desc', 'min'=>$min, 'max'=>$max))}">价格</a></li>
+            <else />
+							<li <eq name="sort" value="price-desc" > class="selected" </eq> ><a title="点击按价格从高到低排序"  href="{:U('Product/Plist',array('sort'=>'price-asc', 'min'=>$min, 'max'=>$max))}">价格</a></li>
+						</if>
+          </ul>
+          <!-- 排序方式E --> 
+		     </div>
+			</div>
+			<div class="clear"></div>
+			<!-- 商品列表 -->
+			<div class="shop_bd_list_content clearfix">
+				<ul>
+          <!-- 循环产品 S -->
+					<volist name="list" id="vo">
+						<li>
+							<dl>
+								<dt><a href="{:U('Product/info',array('pid'=>$vo['pid']))}"><img src="{$vo.water_img}" /></a></dt>
+								<dd class="title"><a href="{:U('Product/info',array('pid'=>$vo['pid']))}">{$vo.title|Mystrsub}</a></dd>
+								<dd class="content">
+									<span class="goods_jiage">￥<strong>{$vo.price}</strong></span>
+								</dd>
+							</dl>
+						</li>
+					</volist>
+         	<!-- 循环产品 End -->
+				</ul>
+			</div>
+            	<!-- 商品列表 End -->
+			<div class="clear"></div>
+			<div class="pagination"> 
+				{$page}
+			</div>
+		</div>
+	</div>
+	<!-- List Body End -->
+	<!--底部开始-->
+	<include file="Public/foot" />
+	<!-- 底部 End -->
+</body>
+</html>

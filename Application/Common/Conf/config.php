@@ -18,4 +18,10 @@ return array(
   'DB_RW_SEPARATE'  =>  false,   // 数据库读写是否分离 主从式有效
   'DB_MASTER_NUM'   =>  1, // 读写分离后 主服务器数量
   'DB_SLAVE_NO'     =>  '', // 指定从服务器序号
+
+  // 图片上传
+  'MAX_SIZE' => 1048576, // 附件上传大小
+  'EXTS' => array('jpg', 'jpeg', 'png', 'gif'),
+  'ROOT_PATH' => '.',  // 保存根目录
+
 );

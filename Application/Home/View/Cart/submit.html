@@ -1,0 +1,215 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>管理收货地址</title>
+  <link rel="stylesheet" href="__PUBLIC__/Home/css/base.css" type="text/css" />
+  <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_common.css" type="text/css" />
+  <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_header.css" type="text/css" />
+  <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_manager.css" type="text/css" />
+  <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_gouwuche.css" type="text/css" />
+  <link rel="stylesheet" href="__PUBLIC__/Home/css/style.css" type="text/css" />
+  <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.js" ></script>
+  <script type="text/javascript" src="__PUBLIC__/Home/js/topNav.js" ></script>
+  <script type="text/javascript" src="__PUBLIC__/layer/layer.js" ></script>
+</head>
+<body>
+  <!-- 头部开始   -->
+  <include file="Public/head" />
+  <!-- 头部 End -->
+  <!-- 面包屑 注意首页没有 -->
+  <div class="shop_hd_breadcrumb">
+    <strong>当前位置：</strong>
+    <span>
+      <a href="">首页</a>&nbsp;›&nbsp;
+      <a href="">我的商城</a>&nbsp;›&nbsp;
+      <a href="">确认订单</a>
+    </span>
+  </div>
+  <div class="clear"></div>
+  <!-- 面包屑 End -->
+  <!-- 购物流程导航 -->
+  <div class="shop_gwc_bd_contents_lc clearfix">
+    <ul>
+      <li class="step_a ">确认购物清单</li>
+      <li class="step_b hover_b">确认收货人资料及送货方式</li>
+      <li class="step_c">购买完成</li>
+    </ul>
+  </div>
+  <!-- 购物流程导航 End -->
+  <div class="shop_member_bd clearfix">
+    <!-- 购物列表 -->
+    <div class="shop_member_bd_right clearfix">
+      <div class="tijiao">
+        <h3>确认收货地址</h3>
+        <ul class="tijiao1">
+          <volist name="addr" id="vo">
+            <li>
+              <span class="span1 fl"><input type="radio" name="is_addr" id="is_addr" value="1" checked><label for="add">{$vo.consignee} {$vo.province}{$vo.city} {$vo.area}{$vo.addr}   {$vo.tel}</label></span>  
+            </li>
+          </volist>
+          <li><span class="span1 fl" style="line-height:35px;">
+            地区选择 :  &nbsp;
+            <select class="s1" name='province'>
+              <option pid="0" >请选择</option>
+              <volist name="province" id="vo">
+                <option pid="{$vo.id}" >{$vo.name}</option>
+              </volist>
+            </select>   &nbsp; &nbsp;
+            <select class="s1" name='city'>
+              <option pid="0" >请选择</option>
+            </select>   &nbsp; &nbsp;
+            <select class="s1" name='area'>
+              <option pid="0" >请选择</option>
+            </select>  &nbsp; &nbsp;
+              <br>
+              详细地址 :  &nbsp;<input type="text" name="addr" value="" class="s1 t1" style="width:250px;"><br>
+              电　　话 :  &nbsp;<input type="text" name="tel" value="" class="s1 t1" style="width:250px;"><br>
+              收 货  &nbsp;人 :  &nbsp;<input type="text" name="consignee" value="" class="s1 t1" style="width:250px;"><br>
+              <input type="button" id="saveAddress" value="保存新地址">
+            </span>
+          </li>
+          <!-- <li><a href="javascript:;" onclick="add_address()">新增地址</a></li> -->
+        </ul>
+      </div>
+      <div class="tijiao mt30">
+        <h3>支付方式</h3>
+        <ul class="tijiao1">
+          <li>
+            <span class="span1 fl"><input type="radio" name="payid" id="chinabank" value="1" checked><label for="chinabank">网银在线</label></span>  
+          </li>
+          <li>
+            <span class="span1 fl"><input type="radio" name="payid" id="alipay" value="2" ><label for="alipay">支付宝</label></span>  
+          </li>
+        </ul>
+      </div>
+      <div class="shop_meber_bd_good_lists clearfix">
+        <div class="title"><h3>购物清单</h3></div>
+        <table>
+          <thead class="tab_title">
+            <th style="width:500px;"><span>商品信息</span></th>
+            <th style="width:100px;"><span>单价</span></th>
+            <th style="width:100px;"><span>数量</span></th>
+            <th style="width:110px;"><span>订单总价</span></th>
+          </thead>
+          <tbody>
+            <!--购物产品循环开始-->
+            <tr><td colspan="5">
+              <table class="good">					
+                <tbody>
+                  <volist name="list" id="vo" >
+                    <tr>
+                      <td class="dingdan_pic"><img src="{$vo.water_img}" /></td>
+                      <td class="dingdan_title"><a href="">{$vo.title}</a></td>
+                      <td class="dingdan_danjia">￥<strong>{$vo.price}</strong></td>
+                      <td class="dingdan_shuliang">{$vo.number}</td>
+                      <td class="dingdan_zongjia">￥<strong><?php printf('%.2f', $vo['number']*$vo['price']) ?></strong></td>
+                    </tr>
+                  </volist>
+                </tbody>
+              </table>
+            </td></tr>
+            <!--购物产品循环结束-->
+          </tbody>
+        </table>
+      </div>
+    <div class="jisuan">
+      <span>总计：<em>{$sumAll}</em> 元</span>
+      <a href="javascript:history.go(-1)"  style=" line-height:66px; padding-right:40px; ">返回购物车</a>
+      <input type="button" class="a3" value="提交订单" style="border:none" onClick="location.href='success.html'">
+    </div>
+  </div>
+</div>
+<!--底部开始-->
+<include file="Public/foot" />
+<!-- 底部 End -->
+<script>
+  // 省 市 区列表添加
+  $("select.s1").change(function(){
+    var pid = $(this).children(':selected').attr('pid');
+    var name = $(this).attr('name');
+    if(name == 'area'){
+      return;
+    }
+    $.ajax({
+      url: '{:U("Order/getCity")}',
+      type: 'post',
+      data:{'pid':pid},
+      dataType:'text',
+      async:true,
+      success:function(d){
+        // console.log(d);
+        if(name == 'province'){
+          $('select.s1').eq(1).append(d);
+        }else if(name == 'city' ){
+          $('select.s1').eq(2).append(d);
+        }
+      }
+    });
+  })
+  // 保存地址
+  $("#saveAddress").click(function(){
+    var province = $("select.s1:eq(0)").children(':selected').html();
+    var city = $("select.s1:eq(1)").children(':selected').html();
+    var area = $("select.s1:eq(2)").children(':selected').html();
+    var addr = $("input[name='addr']").val();
+    var tel = $("input[name='tel']").val();
+    var consignee = $("input[name='consignee']").val();
+
+    // 是否为空
+    if(province == ''){ $("select.s1:eq(0)").focus(); return; }
+    if(city == ''){ $("select.s1:eq(1)").focus(); return; }
+    if(area == ''){ $("select.s1:eq(2)").focus(); return; }
+    if(addr == ''){ $("input[name='addr']").focus(); return; }
+    if(tel == ''){ $("input[name='tel']").focus(); return; }
+    if(consignee == ''){ $("input[name='consignee']").focus(); return; }
+
+    // 正则验证
+    telrule = /^1[3578]\d{9}$/;
+    if(!telrule.test(tel)){alert('手机格式错误'); return;};
+    $.ajax({
+      url: '{:U("Order/confirm")}',
+      type: 'post',
+      data:{
+        'province':province,
+        'city':city,
+        'area':area,
+        'addr':addr,
+        'tel':tel,
+        'consignee':consignee,
+      },
+      dataType:'text',
+      async:true,
+      success:function(d){
+        if(d !== '添加成功'){
+          alert(d);
+        }else{
+
+        }
+      }
+    });
+
+    // console.log(province);
+    // console.log(city);
+    // console.log(area);
+    // console.log(addr);
+    // console.log(tel);
+    // console.log(consignee);
+
+  })
+  function add_address(){
+    layer.open({
+      type: 1,
+      btn:1,
+      skin: 'layui-layer-rim', //加上边框
+      area: ['420px', '240px'], //宽高
+      content: '<span class="span1 fl" style="line-height:35px;">地区选择 :  &nbsp<select class="s1" name=\'province\'> <option pid="0" >请选择</option><volist name="province" id="vo"><option pid="{$vo.id}" >{$vo.name}</option></volist></select>   &nbsp; &nbsp; <select class="s1" name=\'city\'> <option pid="0" >请选择</option> </select>   &nbsp; &nbsp; <select class="s1" name=\'area\'> <option pid="0" >请选择</option> </select>  &nbsp; &nbsp; <br> 详细地址 :  &nbsp;<input type="text" name="addr" value="" class="s1 t1" style="width:250px;"><br> 电　　话 :  &nbsp;<input type="text" name="tel" value="" class="s1 t1" style="width:250px;"><br> 收 货  &nbsp;人 :  &nbsp;<input type="text" name="consignee" value="" class="s1 t1" style="width:250px;"><br> <input type="button" id="saveAddress" value="保存新地址"> </span>'
+    });
+  }
+</script>
+</body>
+</html>
+
+
+
+
+

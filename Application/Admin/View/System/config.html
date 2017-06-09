@@ -27,40 +27,31 @@
     <div class="box_border">
       <div class="box_top"><b class="pl15">表单</b></div>
       <div class="box_center">
-        <form action="{:U('User/doChange')}" class="jqtransform" method="post">
+        <form action="{:U('System/doConfig')}" class="jqtransform" method="post">
          <table class="form_table pt15 pb15" width="100%" border="0" cellpadding="0" cellspacing="0">
            <tr>
-            <td class="td_right">用户名：</td>
+            <td class="td_right">网站名称：</td>
             <td class=""> 
-              <input type="text" name="username" class="input-text lh30" size="40" value="{$Info.username}">
-              <input type="hidden" name="uid" value="{$Info.uid}">
+              <input type="text" name="title" class="input-text lh30" size="40" value="{$Info.title}">
+              <input type="hidden" name="w_id" value="{$Info.w_id}">
             </td>
           </tr>
           <tr>
-            <td class="td_right">密码：</td>
+            <td class="td_right">网址：</td>
             <td class=""> 
-              <input type="text" name="password" class="input-text lh30" size="40" placeholder="不填写表示不修改" >
+              <input type="text" name="url" class="input-text lh30" size="40" value="{$Info.url}" >
             </td>
           </tr>
           <tr>
-            <td class="td_right">手机号：</td>
+            <td class="td_right">关键词：</td>
             <td class=""> 
-              <input type="text" name="tel" class="input-text lh30" size="40" value="{$Info.tel}">
+              <input type="text" name="keyword" class="input-text lh30" size="40" value="{$Info.keyword}" >
             </td>
           </tr>
           <tr>
-            <td class="td_right">性别：</td>
-            <td class="">
-              <if condition="$Info.sex eq '男' ">
-                <input type="radio" name="sex" checked  value="男"> 男
-                <input type="radio" name="sex" value="女"> 女
-              <elseif condition="$Info.sex eq '女' " />
-                <input type="radio" name="sex"  value="男"> 男
-                <input type="radio" name="sex" checked  value="女"> 女
-              <else />
-                <input type="radio" name="sex" value="男"> 男
-                <input type="radio" name="sex" value="女"> 女
-              </if>
+            <td class="td_right">网站描述：</td>
+            <td class=""> 
+              <input type="text" name="description" class="input-text lh30" size="40" value="{$Info.description}">
             </td>
           </tr>
            <td class="td_right">&nbsp;</td>

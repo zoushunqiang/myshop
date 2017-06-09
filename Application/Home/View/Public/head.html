@@ -20,7 +20,7 @@
         <div class="shop_hd_topNav_all_right">
           <ul class="topNav_quick_menu">
             <li>
-              <div class="topNav_menu"><a href="cart.html" class="topNavHover">购物车<b>0</b></a></div>
+              <div class="topNav_menu"><a href="{:U('Cart/cart')}" class="topNavHover">购物车<b><notempty name="Think.session.cartCount">{$Think.session.cartCount}<else />0</notempty></b></a></div>
             </li>
             <li>
               <div class="topNav_menu">
@@ -65,7 +65,7 @@
       <!-- 普通导航菜单 -->
       <ul class="shop_hd_menu_nav" style="margin-left: -150px;">
         <li class="current_link"><a href="{:U('Index/index')}"><span>首页</span></a></li>
-        <li class="link"><a href="list.html"><span>产品列表</span></a></li>
+        <li class="link"><a href="{:U('Product/Plist')}"><span>产品列表</span></a></li>
         <li class="link"><a href="{:U('Index/content')}"><span>关于我们</span></a></li>
       </ul>
       <!-- 普通导航菜单 End -->
