@@ -68,4 +68,5 @@ class UserController extends Controller
     $verify = new \Think\verify($config);
     return $verify->entry();
   }
+  
 }

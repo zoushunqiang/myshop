@@ -13,6 +13,7 @@
 .shop_goods_show_right ul li span strong{font-weight:bold; font-size:18px; color:#FF3311; margin-right: 5px;}
 .shop_goods_show_right ul li input.good_nums{width:20px; padding:0 5px; height:20px; line-height:20px;}
 .shop_goods_show_right ul li .goods_sub{float:left; overflow: hidden;  width:140px; height:40px; text-indent: 100em; margin-right: 10px; background:url('../images/public.png') no-repeat -100px top; border:none; cursor:pointer;}
+.shop_goods_show_right ul li .goods_add{float:left; overflow: hidden;  width:140px; height:40px; background-color: #F89822; color: white; font-size: 1.5em; margin-right: 10px; border:none; cursor:pointer;}
 .shop_goods_show_right ul li a.goods_sub_gou{background-position:-250px top;}
 .shop_goods_show_right ul li.goods_num span a{display: inline-block; background:url('../images/public.png') left -60px; width:13px; height:13px; margin:0 5px; position: relative; top:2px; cursor: pointer;}
 .shop_goods_show_right ul li.goods_num span a.good_num_jian{}

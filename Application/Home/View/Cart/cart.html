@@ -47,7 +47,7 @@
 					<tr>
 						<th colspan="2"><span>商品</span></th>
 						<th><span>单价(元)</span></th>
-						<th><span>数量</span></th>
+						<th style="width:150px;" ><span>数量</span></th>
 						<th><span>小计</span></th>
 						<th><span>操作</span></th>
 					</tr>
@@ -55,8 +55,8 @@
 				<tbody>
 					<volist name="list" id="vo">
 						<tr>
-							<td class="gwc_list_pic"><a href=""><img src="{$vo.water_img}" /></a></td>
-							<td class="gwc_list_title"><a href="">{$vo.title}</a></td>
+							<td class="gwc_list_pic"><a href="{:U('Product/info',array('pid'=>$vo['pid']),'')}"><img src="{$vo.water_img}" /></a></td>
+							<td class="gwc_list_title"><a href="{:U('Product/info',array('pid'=>$vo['pid']),'')}">{$vo.title}</a></td>
 							<td class="gwc_list_danjia"><span>￥<strong id="danjia_001">{$vo.price}</strong></span></td>
 							<td class="gwc_list_shuliang">
 								<span>

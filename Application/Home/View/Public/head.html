@@ -20,7 +20,7 @@
         <div class="shop_hd_topNav_all_right">
           <ul class="topNav_quick_menu">
             <li>
-              <div class="topNav_menu"><a href="{:U('Cart/cart')}" class="topNavHover">购物车<b><notempty name="Think.session.cartCount">{$Think.session.cartCount}<else />0</notempty></b></a></div>
+              <div class="topNav_menu"><a href="{:U('Cart/cart')}" class="topNavHover">购物车<b id="cartCount"><notempty name="Think.session.cartCount">{$Think.session.cartCount}<else />0</notempty></b></a></div>
             </li>
             <li>
               <div class="topNav_menu">
@@ -28,6 +28,7 @@
                   <a href="{:U('User/login')}" class="topNavHover">会员登陆</a>
                 <else />
                   <a href="{:U('User/doLogout')}" class="topNavHover">注销登陆</a>
+                  <a href="{:U('Order/user')}" class="topNavHover">我的订单</a>
                 </empty>
                 <a href="{:U('User/reg')}" class="topNavHover">会员注册</a>    
               </div>
