@@ -12,8 +12,13 @@ class ProductController extends Controller
   // 产品管理
   public function product(){
     $Product = M("Product");
-    $list = $Product->select();
+    $count = $Product->count();
+    $Page = new \Think\Page($count,5);
+    $show = $Page->show();
+    $Page->rollPage = 5;
+    $list = $Product->order('pid desc')->limit($Page->firstRow.','.$Page->listRows)->select();
     $this->assign('list', $list);
+    $this->assign('page', $show);
     $this->display();
   }
   // 添加或修改页面

@@ -39,11 +39,11 @@
 			<div class="clear"></div>
 			<dl>
 				<dt>我的交易</dt>
-				<dd><span><a href="">已购买商品</a></span></dd>
+				<dd><span><a href="{:U('Order/user')}">已购买商品</a></span></dd>
 			</dl>
 			<dl>
 				<dt>我的账户</dt>
-				<dd><span><a href="password_edit.html">资料修改</a></span></dd>	
+				<dd><span><a href="{:U('User/infoEdit')}">资料修改</a></span></dd>	
 			</dl>
 		</div>
 		<!-- 左边导航 End -->
@@ -73,19 +73,29 @@
 									</tr>
 								</thead>
 								<tbody>
-								<volist name="orders_product[$vo['oid']]" id="row">
+									<volist name="orders_product[$vo['oid']]" id="row">
 
-									<!--循环订单产品开始-->
-									<tr>
-										<td class="dingdan_pic"><img src="{$row.img}" /></td>
-										<td class="dingdan_title"><span><a href="">{$row.title}</a></span> </td>
-										<td class="dingdan_danjia">￥<strong>{$row.price}</strong></td>
-										<td class="dingdan_shuliang">{$row.number}</td>
-										<td class="dingdan_zongjia">￥<strong>25.00</strong></td>
-										<eq name="i" value="1" > <td  width="15%" rowspan="{$orders_product[$vo['oid']]|count}" style="text-align:center;border-left:1px solid #e8e8e8">未发货</td></eq>
-									</tr>
-									<!--循环订单产品结束-->
-								</volist>
+										<!--循环订单产品开始-->
+										<tr>
+											<td class="dingdan_pic"><img src="{$row.img}" /></td>
+											<td class="dingdan_title"><span><a href="">{$row.title}</a></span> </td>
+											<td class="dingdan_danjia">￥<strong>{$row.price}</strong></td>
+											<td class="dingdan_shuliang">{$row.number}</td>
+											<td class="dingdan_zongjia">￥<strong>25.00</strong></td>
+											<eq name="i" value="1" ><td  width="15%" rowspan="{$orders_product[$vo['oid']]|count}" style="text-align:center;border-left:1px solid #e8e8e8">
+												<if condition="$vo['status'] eq 1">
+												未发货
+												<elseif condition="$vo['status'] eq 2" />
+												已发货
+												<elseif condition="$vo['status'] eq 3" />
+												配送中
+												<elseif condition="$vo['status'] eq 4" />
+												已完成
+												</if>
+											</td></eq>
+										</tr>
+										<!--循环订单产品结束-->
+									</volist>
 								</tbody>
 							</table>
 						</td></tr>

@@ -40,7 +40,7 @@
        return;
         //AJAX提交到PHP中处理
         $.ajax({
-          url: '',
+          url: '{:U("Order/delOrder")}',
           type: 'post',
           data: {'ids': vals},
           dataType: 'text',
@@ -50,11 +50,11 @@
             } else if (d == 2) { //删除失败
               alert('删除失败');
             } else if (d == 3) { //未登录
-              window.location.href = 'login.html'
+              window.location.href = "{U('Login/login')}";
             }
           }
         });
-      });	
+      });
     }); 
   </script>
   <title>Document</title>
@@ -62,36 +62,48 @@
 <body>
   <div class="container">
     <div id="button" class="mt10">
+      <form action="{:U('Order/orders')}" method="get">
       <table width="100%" border="0">
         <tr>
-          <td >    <input type="button" name="button2" class="btn btn82 btn_nochecked" value="全选" id="selectAll">
+          <td ><input type="button" name="button2" class="btn btn82 btn_nochecked" value="全选" id="selectAll">
             <input type="button" name="button" class="btn btn82 btn_del" value="删除" id="selectdel"></td>
             <td width="35%">
-              订单号 : <input type="text" name="name" class="input-text lh25" size="30">   <input type="submit" name="button" class="btn btn82 btn_search" value="查询">   </td>
+              订单号 : <input type="text" name="search" class="input-text lh25" size="30" value="{$Think.get.search}"><input type="submit" name="submit" class="btn btn82 btn_search" value="查询" ></td>
             </tr>
           </table>
+        </form>
         </div>
         <div id="table" class="mt10">
           <div class="box span10 oh">
             <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list_table">
               <tr>
                 <th width="40"></th>
-                <th width="150">订单号</th>
+                <th width="160">订单号</th>
                 <th >收货信息</th>
                 <th width="100">总金额</th>
-                <th width="100">下单时间</th>
-                <th width="180">状态</th>
+                <th width="150">下单时间</th>
+                <th width="100">状态</th>
                 <th width="100">操作</th>
               </tr>
               <tbody id="list">
                 <volist name="list" id="vo" >
                   <tr class="tr">
-                    <td class="td_center"><input type="checkbox" value="1"></td>
+                    <td class="td_center"><input type="checkbox" value="{$vo.oid}"></td>
                     <td>{$vo.sn}</td>
                     <td class="td_left">{$vo.consignee} {$vo.tel}<br>{$vo.addr}</td>
                     <td>{$vo.total}</td>
-                    <td>{$vo.add_time|date="Y-m-d H:i:s"}</td>
-                    <td>{$vo.status}</td>
+                    <td>{$vo.add_time|date="Y-m-d H:i:s",###}</td>
+                    <td>
+                      <if condition="$vo['status'] eq 1">
+                      未发货
+                      <elseif condition="$vo['status'] eq 2" />
+                      已发货
+                      <elseif condition="$vo['status'] eq 3" />
+                      配送中
+                      <elseif condition="$vo['status'] eq 4" />
+                      已完成
+                      </if>
+                    </td>
                     <td><a href="{:U('Order/order_info',array('oid'=>$vo['oid']))}">查看订单</a></td>
                   </tr>
                 </volist>
@@ -99,16 +111,9 @@
             </table>
           <div class="page mt10">
             <div class="pagination">
-            <ul>
-              <li class="first-child"><a href="#">首页</a></li>
-              <li class="disabled"><span>上一页</span></li>
-              <li class="active"><span>1</span></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">下一页</a></li>
-              <li class="last-child"><a href="#">末页</a></li>
-            </ul>
+              {$page}
+            </div>
           </div>
-        </div>
       </div>
     </div>
   </div> 

@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 use \Think\Controller;
+// 前台订单处理
 class OrderController extends Controller
 {
   public function __construct(){
@@ -12,7 +13,6 @@ class OrderController extends Controller
     $Contents = M('Contents');
     $content_list = $Contents->select();
     $this->assign('contents',$content_list);
-    
   }
   // 展示订单提交页面
   public function order(){
@@ -29,7 +29,6 @@ class OrderController extends Controller
     // 省 市 级三级联动
     $City = M('City');
     $province = $City->where(array('pid'=>'100000'))->select();
-
     $this->province = $province;
     $this->sumAll = $sumAll;
     $this->addr = $addr;
@@ -49,8 +48,7 @@ class OrderController extends Controller
     $addrid = I('addrid');
     $addrInfo = M('UserAddress')->where(array('id'=>$addrid))->find();
     $addr = $addrInfo['province'].$addrInfo['city'].$addrInfo['area'].$addrInfo['addr'];
-    $sn = 'sn_'.uniqid();
-    $express = 'ex_'.uniqid();
+    $sn = 'sn_'.date("YmdHis").rand(1000,9999);
     $data = array(
       'uid' => session('uid'),
       'sn' => $sn,
@@ -59,7 +57,6 @@ class OrderController extends Controller
       'consignee' => $addrInfo['consignee'],
       'tel' => $addrInfo['tel'],
       'addr' => $addr,
-      'express' => $express,
       'status' => 1,
       'add_time' => time(),
       );
@@ -95,7 +92,7 @@ class OrderController extends Controller
         'add_time' => time(),
         );
       $re2 = $OrdersProduct->add($data);
-      if(!($re2>0)){ exit('添加失败'); }
+      if(!($re2>0)){ exit('操作失败，请稍后再试'); }
       // 修改库存
       $stock = $re['stock']-$v['number'];
       $re3 = $Product->where(array('pid'=>$v['pid']))->save(array('stock'=>$stock));
@@ -104,13 +101,26 @@ class OrderController extends Controller
     // 清除购物车中的商品
     $re4 = $Cart->where(array('uid'=>session('uid')))->delete();
     if($re4>0){
-      session('cartCount', niull);
-      echo 1;
+      session('cartCount', null);
     }else{
-      echo '提交失败';
+      exit('提交失败');
     }
-    // 引导支付
-    // 提示订单是否提交成功
+    // 保存订单日志
+    $dataLog = array(
+      'uid' => session('uid'),
+      'oid' => $oid,
+      'value' => '',
+      'username' => session('username'),
+      'uid' => session('uid'),
+      'status' => 1,
+      'add_time' => time(),
+      );
+    $re5 = M('OrdersLog')->add($dataLog);
+    if(empty($re5)){
+      exit('操作失败，请稍后再试');
+    }else{
+      echo 1; // 返回给ajax 跳转到订单提交成功页面
+    }
   }
   /**
    * 省 市 区三级联动查询
@@ -154,8 +164,12 @@ class OrderController extends Controller
       'add_time' => time(),
       'uid' => session('uid'),
       );
-
-    $re = $UserAddress->add($data);
+    $addr_id = I('addr_id');
+    if(empty($addr_id)){
+      $re = $UserAddress->add($data);
+    }else{
+      $re = $UserAddress->where(array('id'=>$addr_id))->save($data);
+    }
     echo $re;
       // echo $consignee,'&nbsp;&nbsp;',$province,$city,$area,$addr,'&nbsp;&nbsp;',$tel;
   }
@@ -179,6 +193,4 @@ class OrderController extends Controller
     $this->display('Cart:user');
   }
 }
-
-
 

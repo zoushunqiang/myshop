@@ -1,0 +1,70 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>信息提示</title>
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/base.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_common.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_header.css" type="text/css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/shop_list.css" type="text/css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/style.css" type="text/css" />
+    <Meta http-equiv="Refresh" Content="3; Url=/"> 
+    <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.js" ></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/topNav.js" ></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/shop_list.js" ></script>
+</head>
+<body>
+	<!-- 头部开始   -->
+  <include file="Public/head" />
+	<!-- 头部 End -->
+	
+	<div class="clear"></div>
+	<!-- 面包屑 注意首页没有 -->
+	<div class="shop_hd_breadcrumb">
+		<strong>当前位置：</strong>
+		<span>
+			<a href="">首页</a>&nbsp;›&nbsp;
+			<a href="">商品列表</a>
+		</span>
+	</div>
+	<div class="clear"></div>
+	<!-- 面包屑 End -->
+
+	<!-- Header End -->
+	<div class="shop_bd clearfix">
+	
+
+<div class="shop_bd_list_right clearfix" style="width: 1000px;">
+		
+			<div class="shop_bd_list_content clearfix">
+			      
+        <div class="leginbar">
+             <h3>信息提示</h3>
+             <p>{$msg}<br>将在 <font id="second"></font> 秒后 <a href="/">返回上一页</a></p>
+        </div>
+
+		</div>
+	</div>
+    </div>
+	<!-- List Body End -->
+<script>
+function countDown(time,url){
+　　$("#second").html(time);//<span>中显示的内容值
+　　
+　　if(--time>0){
+　　   setTimeout("countDown("+time+",'"+url+"')",1000);//设定超时时间
+　　}else{
+         location.href=url;
+       }
+　　
+　　}
+
+    countDown(3,"{$url}");
+</script>
+
+
+	<!--底部开始-->
+  <include file="Public/foot" />
+	<!-- 底部 End -->
+	
+</body>
+</html>
