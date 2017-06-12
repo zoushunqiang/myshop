@@ -58,6 +58,30 @@ class UserController extends Controller
     if(!empty(session('cartCount'))) session('cartCount',null);  // 清空购物车统计
     $this->redirect('Index/index');
   }
+  // 修改用户信息
+  public function infoEdit(){
+    $addr = M('UserAddress')->where(array('uid'=>session('uid')))->order('id desc')->select();
+    $province = M('City')->where(array('pid'=>'100000'))->select();
+    $this->province = $province;
+    $this->addr = $addr;
+    $this->display();
+  }
+  public function delAddr(){
+    $id = I('id');
+    if(empty($id)){
+      $this->error('参数错误');
+      exit;
+    }
+    $re = M('UserAddress')->where(array('id'=>$id))->delete();
+    if(empty($re)){
+      $this->msg = '删除失败';
+      
+    }else{
+      $this->msg = '删除成功';
+    }
+    $this->url = U('User/infoEdit');
+    $this->display('msginfo');
+  }
   // 生成验证码
   public function verify(){
     $config = array(
@@ -68,4 +92,5 @@ class UserController extends Controller
     $verify = new \Think\verify($config);
     return $verify->entry();
   }
+  
 }

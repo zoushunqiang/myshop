@@ -108,7 +108,8 @@
 							</span>
 						</li>
 						<li style="padding:20px 0 20px 20px;">
-							<span> <input type="submit" class="goods_sub goods_sub_gou"   value="加入购物车"></span>
+							<span> <input type="submit" class="goods_sub goods_sub_gou"   value="购物车"></span>
+							<span> <input type="button" class="goods_add goods_sub_gou" name="add_goods" value="加入购物车"  ></span>
 						</li>
 					</form>
 					<li>  <!--百度分享接口 Start-->
@@ -165,4 +166,33 @@
 		<include file="Public/foot" />
 		<!-- 底部 End -->
 	</body>
+	<script>
+		$(function(){
+			$("input[name='add_goods']").click(function(){
+				var pid = $("input[name = 'pid']").val();
+				var good_nums = $("input[name = 'good_nums']").val();
+				var catCount = $("#cartCount").html();
+				// console.log(good_nums);
+				// console.log(catCount);
+				// $("#cartCount").html(catCount);
+				$.ajax({
+					url:"{:U('Cart/add')}",
+					type:'post',
+					dataType:'text',
+					async:true,
+					data:{
+						'pid':pid,
+						'good_nums':good_nums,
+					},
+					success:function(d){
+						console.log(d);
+						if(d>0){
+							catCount = parseInt(catCount) + parseInt(good_nums);
+							$("#cartCount").html(catCount);
+						}
+					},
+				});				
+			})
+		})
+	</script>
 	</html>

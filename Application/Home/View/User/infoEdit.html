@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>信息修改</title>
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/base.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_common.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_header.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_manager.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_shdz_835.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/shop_form.css" type="text/css" />
+	<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.9.1.min.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/topNav.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/layer/layer.js" ></script>
+	<script>
+		function add_address(str){
+		  layer.open({
+		    title:'保存地址',
+		    type: 1,
+		    closeBtn: str,
+		    skin: 'layui-layer-rim', //加上边框
+		    area: ['520px', '240px'], //宽高
+		    content: '<span class="span1 fl" style="line-height:35px;">地区选择 :  &nbsp<select class="s1" name=\'province\' onchange="getCity(0)" > <option pid="0"  >请选择</option><volist name="province" id="vo"><option pid="{$vo.id}" >{$vo.name}</option></volist></select>   &nbsp; &nbsp; <select class="s1" name=\'city\' onchange="getCity(1)" > <option pid="0" >请选择</option> </select>   &nbsp; &nbsp; <select class="s1" name=\'area\'> <option pid="0" >请选择</option> </select>  &nbsp; &nbsp; <br> 详细地址 :  &nbsp;<input type="text" name="addr" value="" class="s1 t1" style="width:250px;"><br> 电　　话 :  &nbsp;<input type="text" name="tel" value="" class="s1 t1" style="width:250px;"><br> 收 货  &nbsp;人 :  &nbsp;<input type="text" name="consignee" value="" class="s1 t1" style="width:250px;"><br> <input type="button" id="saveAddress" value="保存新地址" onclick="saveAddress()"> </span>',
+		  });
+		}
+		function del_addr(id){
+		  layer.open({
+		    title:'保存地址',
+		    type: 1,
+		    closeBtn: 1,
+		    skin: 'layui-layer-rim', //加上边框
+		    area: ['520px', '240px'], //宽高
+		    content: '<span class="span1 fl" style="line-height:35px;">地区选择 :  &nbsp<select class="s1" name=\'province\' onchange="getCity(0)" > <option pid="0"  >请选择</option><volist name="province" id="vo"><option pid="{$vo.id}" >{$vo.name}</option></volist></select>   &nbsp; &nbsp; <select class="s1" name=\'city\' onchange="getCity(1)" > <option pid="0" >请选择</option> </select>   &nbsp; &nbsp; <select class="s1" name=\'area\'> <option pid="0" >请选择</option> </select>  &nbsp; &nbsp; <br> 详细地址 :  &nbsp;<input type="text" name="addr" value="" class="s1 t1" style="width:250px;"><input type="hidden" name="addr_id" value="'+id+'"><br> 电　　话 :  &nbsp;<input type="text" name="tel" value="" class="s1 t1" style="width:250px;"><br> 收 货  &nbsp;人 :  &nbsp;<input type="text" name="consignee" value="" class="s1 t1" style="width:250px;"><br> <input type="button" id="saveAddress" value="保存新地址" onclick="saveAddress()"> </span>',
+		  });
+		}
+		// 省 市 区列表添加
+		function getCity(index){
+		  var pid = $("select.s1").eq(index).children(':selected').attr('pid');
+		  var name = $("select.s1").eq(index).attr('name');
+		  if(name == 'area'){
+		    return;
+		  }
+		  $.ajax({
+		    url: '{:U("Order/getCity")}',
+		    type: 'post',
+		    data:{'pid':pid},
+		    dataType:'text',
+		    async:true,
+		    success:function(d){
+		      // console.log(d);
+		      if(name == 'province'){
+		        // 清空下一选项列表 添加默认选项 再添加列表
+		        $('select.s1').eq(1).empty().append('<option pid="0" >请选择</option>').append(d);
+		        // 清空第三个选项列表 添加默认选项
+		        $('select.s1').eq(2).empty().append('<option pid="0" >请选择</option>');
+		      }else if(name == 'city' ){
+		        // 清空下一选项列表 添加默认选项 再添加列表
+		        $('select.s1').eq(2).empty().append('<option pid="0" >请选择</option>').append(d);
+		      }
+		    }
+		  });
+		}
+		// 保存地址
+		function saveAddress(){
+		  var province = $("select.s1:eq(0)").children(':selected').html();
+		  var city = $("select.s1:eq(1)").children(':selected').html();
+		  var area = $("select.s1:eq(2)").children(':selected').html();
+		  var addr = $("input[name='addr']").val();
+		  var tel = $("input[name='tel']").val();
+		  var consignee = $("input[name='consignee']").val();
+		  var addr_id = $("input[name='addr_id']").val();
+
+		  // 是否为空
+		  if(province == '请选择'){ layer.msg('请选择省市区', {icon: 2, time: 1000 }); return; }
+		  if(city == '请选择'){ layer.msg('请选择省市区', {icon: 2, time: 1000 }); return; }
+		  if(area == '请选择'){ layer.msg('请选择省市区', {icon: 2, time: 1000 })  ; return; }
+		  if(addr == ''){ $("input[name='addr']").focus(); return; }
+		  if(tel == ''){ $("input[name='tel']").focus(); return; }
+		  if(consignee == ''){ $("input[name='consignee']").focus(); return; }
+
+		  // 正则验证
+		  telrule = /^1[3578]\d{9}$/;
+		  if(!telrule.test(tel)){alert('手机格式错误'); return;};
+		  $.ajax({
+		    url: '{:U("Order/confirm")}',
+		    type: 'post',
+		    data:{
+		      'province':province,
+		      'city':city,
+		      'area':area,
+		      'addr':addr,
+		      'tel':tel,
+		      'consignee':consignee,
+		      'addr_id':addr_id,
+		    },
+		    dataType:'text',
+		    async:true,
+		    success:function(d){
+		      if(d <= 0){
+		        layer.msg('添加失败', {icon: 2, time: 1000 });
+		      }else{
+		        $("input[name='addr']").val('');
+		        $("input[name='tel']").val('');
+		        $("input[name='consignee']").val('');
+		        // $(".shop_form ul li:eq(0)").before('<li> <span class="<li class="bn"><label>新地址：</label>'+consignee+'&nbsp;&nbsp;'+province+city+area+addr+'&nbsp;&nbsp;'+tel+'<a href="">修改</a>&nbsp;&nbsp;<a href="{:U('User/delAddr',array('id'=>$vo['id']),'')}">删除</a></li>');
+		        
+		        layer.close(layer.index); // 关闭弹窗
+		        layer.msg('添加成功', {icon: 2, time: 1000 });
+		        location.href = "{:U('User/infoEdit')}"
+		      }
+		    }
+		  });
+		}
+	</script>	
+</head>
+<body>
+	<!-- 头部开始   -->
+	<include file="Public/head" />
+	<!-- 头部 End -->
+	<!-- 面包屑 注意首页没有 -->
+	<div class="shop_hd_breadcrumb">
+		<strong>当前位置：</strong>
+		<span>
+			<a href="">首页</a>&nbsp;›&nbsp;
+			<a href="">我的商城</a>&nbsp;›&nbsp;
+			<a href="">信息修改</a>
+		</span>
+	</div>
+	<div class="clear"></div>
+	<!-- 面包屑 End -->
+	<!-- Header End -->	
+
+	<!-- 我的个人中心 -->
+	<div class="shop_member_bd clearfix">
+		<!-- 左边导航 -->
+		<div class="shop_member_bd_left clearfix">
+			<div class="shop_member_bd_left_pic">
+				<a href="javascript:void(0);"><img src="__PUBLIC__/Home/images/avatar.png" /></a>
+			</div>
+			<div class="clear"></div>
+			<dl>
+				<dt>我的交易</dt>
+				<dd><span><a href="{:U('Order/user')}">已购买商品</a></span></dd>
+			</dl>
+			<dl>
+				<dt>我的账户</dt>
+				<dd><span><a href="{:U('User/infoEdit')}">资料修改</a></span></dd>	
+			</dl>
+		</div>
+		<!-- 左边导航 End -->
+		<!-- 右边修改信息 -->
+		<div class="shop_member_bd_right clearfix" style="width:830px;">
+			<div class="shop_member_bd_right clearfix">
+				<div class="shop_meber_bd_good_lists clearfix">
+					<div class="title"><h3>信息修改</h3></div>
+					<div class="clear"></div>
+					<dic class="shop_home_form">
+						<form athion="" name="" class="shop_form" method="post">
+							<ul>
+								<volist name="addr" id="vo">
+								  <li class="bn"><label>地址{$i}：</label>
+								    {$vo.consignee} {$vo.province}{$vo.city} {$vo.area}{$vo.addr}   {$vo.tel} <a href="javascript:;" onclick="del_addr({$vo.id})" >修改</a>&nbsp;&nbsp;<a href="{:U('User/delAddr',array('id'=>$vo['id']),'')}">删除</a>
+								  </li>
+								</volist>
+								<li class="bn"><a href="javascript:;" onclick="add_address(2)">&nbsp;&nbsp;新增地址</a></li>
+								<hr>
+								<li class="bn"><label>原密码：</label><input type="password" class="truename form-text" /></li>
+								<li class="bn"><label>新密码：</label><input type="password" class="truename form-text" /> 不修改密码请不要填写</li>
+								<li class="bn"><label>重复新密码：</label><input type="password" class="truename form-text" /></li>
+								<li class="bn"><label>&nbsp;</label><input type="submit" class="form-submit" value="保存修改" /></li>
+						</ul>
+					</form>
+				</div>
+			</div>			
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<!-- 右边修改信息 End -->
+</div>
+<!-- 我的个人中心 End -->
+
+<!--底部开始-->
+<include file="Public/foot" />
+<!-- 底部 End -->
+</body>
+</html>

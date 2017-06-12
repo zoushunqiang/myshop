@@ -24,10 +24,11 @@ class CartController extends Controller
       // 未登陆 读取session数据展示
       $Product = M('Product');
       foreach ($_SESSION['cart'] as $key => $v) {
+        $carCount += $v['number'];
         $Info = $Product->where(array('pid'=>$v['pid']))->field('title','price','water_img','stock')->find();
         $list[] = array_merge($Info, $v);  // 合并session和数据库查询的数据
       }
-      session('cartCount', count($list)); // 统计购物车中商品数量
+      session('cartCount', $carCount); // 统计购物车中商品数量
 
       $this->list = $this->arrSort($list,'add_time');
     }else{
@@ -71,8 +72,8 @@ class CartController extends Controller
       }
 
       $list = $Cart->where(array('uid'=>$uid))->join('tp_product ON tp_cart.pid = tp_product.pid')->select();
-      $cartCount = $Cart->where(array('uid'=>$uid))->count('pid'); // 统计购物车中商品数量
-      session('cartCount', count($list)); // 统计购物车中商品数量
+      $cartCount = $Cart->where(array('uid'=>$uid))->sum('number'); // 统计购物车中商品数量
+      session('cartCount', $cartCount); // 统计购物车中商品数量
       $this->list = $this->arrSort($list,'add_time');
     }
     $this->display();
@@ -113,45 +114,13 @@ class CartController extends Controller
             'number' => $good_nums,
             'add_time' => time(),
           );
+        if(IS_AJAX){
+          $this->ajaxReturn(1); // js判断，动态更新头部购物车数据
+        }
       }
     }else{   // 已登陆
       $uid = session('uid');
       $Cart = M('Cart');
-      // 
-      /*if(!empty($_SESSION['cart'])){
-        foreach ($_SESSION['cart'] as $v) {
-          $number = $this->getNum(array('uid'=>$uid, 'pid'=>$v['pid']));
-          // 要判断购物车是否已存在该商品 存在则更新数量 不存在则新增
-          if(!empty($number)){
-            // $error = '你的购物车已有'.$number.'件'."再增加".$good_nums.'件，库存不足.';
-            $number += $good_nums;
-            if($number > $this->getStock($pid)){ // 确认库存状况
-              // $this->error($error);
-              continue; // 库存不足跳出循环 保留数据的数据
-            }
-            $data = array(
-              'number' => $number,
-              'add_time' => time(),
-              );
-            $re = $Cart->where(array('uid'=>$uid, 'pid'=>$v['pid']))->save($data);
-          }else{
-            // 查库存
-            if($number > $this->getStock($pid)){ // 确认库存状况
-              // $error = '库存只剩'.$this->getStock($pid).'件';
-              // $this->error($error);
-              continue; // 库存不足跳出循环
-            }
-            $data = array(
-              'uid' => $uid,
-              'pid' => $v['pid'],
-              'number' => $v['number'],
-              'add_time' => time(),
-              );
-            $Cart->add($data);
-          }
-        }
-        session('cart',null); // 清除session数据
-      }*/
       // 新增的商品添加到数据库
       $number = $this->getNum(array('uid'=>$uid, 'pid'=>$pid));
       // 要判断是否已存在该商品 存在则更新数量 不存在则新增
@@ -184,6 +153,11 @@ class CartController extends Controller
           'add_time' => time(),
           );
         $re = $Cart->add($data);
+        if($re>0){
+          if(IS_AJAX){
+            $this->ajaxReturn(1); // js判断，动态更新头部购物车数据
+          }
+        }
       }
     }
     redirect(U('Cart/cart')); // 跳转到购物车
